@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>The One in Us – Drop 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+:root {
+--bg: #000000;
+--fg: #ffffff;
+--muted: #aaaaaa;
+--accent: #ffffff;
+--font-main: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+background: var(--bg);
+color: var(--fg);
+font-family: var(--font-main);
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 3rem 1.5rem 4rem;
+}
+
+.wrapper {
+max-width: 1100px;
+width: 100%;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+header {
+text-align: center;
+margin-bottom: 3rem;
+}
+
+header h1 {
+font-size: 1.1rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 0.75rem;
+}
+
+header h2 {
+font-size: 2.2rem;
+margin-bottom: 0.75rem;
+}
+
+header p {
+font-size: 0.95rem;
+color: var(--muted);
+max-width: 520px;
+margin: 0.75rem auto 0;
+line-height: 1.5;
+}
+
+.back-link {
+position: fixed;
+top: 1.5rem;
+left: 1.5rem;
+font-size: 0.8rem;
+color: var(--muted);
+opacity: 0.8;
+}
+
+.back-link span {
+opacity: 0.7;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 1.75rem;
+margin-top: 2rem;
+}
+
+.nft-item {
+border: 1px solid rgba(255, 255, 255, 0.1);
+padding: 1rem;
+border-radius: 0.75rem;
+background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.03), transparent);
+transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+cursor: pointer;
+}
+
+.nft-item:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+border-color: rgba(255, 255, 255, 0.35);
+}
+
+.nft-code {
+font-size: 0.75rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 0.5rem;
+}
+
+.nft-title {
+font-size: 1rem;
+margin-bottom: 0.75rem;
+}
+
+.nft-image {
+width: 100%;
+border-radius: 0.5rem;
+border: 1px solid rgba(255, 255, 255, 0.18);
+display: block;
+margin-bottom: 0.75rem;
+}
+
+.nft-meta {
+font-size: 0.8rem;
+color: var(--muted);
+display: flex;
+justify-content: flex-start;
+align-items: center;
+gap: 0.5rem;
+}
+
+.nft-meta span {
+text-transform: uppercase;
+letter-spacing: 0.16em;
+font-size: 0.7rem;
+}
+
+footer {
+margin-top: 3rem;
+text-align: center;
+font-size: 0.8rem;
+color: var(--muted);
+opacity: 0.7;
+}
+
+footer .brand {
+margin-top: 0.3rem;
+letter-spacing: 0.3em;
+text-transform: uppercase;
+font-size: 0.7rem;
+}
+
+@media (max-width: 600px) {
+body {
+padding-top: 3.5rem;
+}
+.back-link {
+top: 1rem;
+left: 1rem;
+}
+header h2 {
+font-size: 1.6rem;
+}
+}
+</style>
+</head>
+<body>
+<!-- back to the landing page -->
+<a href="index.html" class="back-link">
+<span>←</span> The One in Us
+</a>
+
+<main class="wrapper">
+<header>
+<h1>Drop 1</h1>
+<h2>The One in Us . . .</h2>
+<p>
+A collection of 15 unique luxury musical artifacts, each exploring a different part of the human collective.
+</p>
+</header>
+
+<section class="grid">
+<!-- 01/15 – The Original -->
+<a class="nft-item" href="the-original.html">
+<div class="nft-code">01 / 15</div>
+<div class="nft-title">The Original</div>
+<img src="nft-jpegs/the-original.jpg" alt="The Original" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 02/15 – The Outsider -->
+<a class="nft-item" href="the-outsider.html">
+<div class="nft-code">02 / 15</div>
+<div class="nft-title">The Outsider</div>
+<img src="nft-jpegs/the-outsider.jpg" alt="The Outsider" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 03/15 – The Durag -->
+<a class="nft-item" href="the-durag.html">
+<div class="nft-code">03 / 15</div>
+<div class="nft-title">The Durag</div>
+<img src="nft-jpegs/the-durag.jpg" alt="The Durag" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 04/15 – The Cop -->
+<a class="nft-item" href="the-cop.html">
+<div class="nft-code">04 / 15</div>
+<div class="nft-title">The Cop</div>
+<img src="nft-jpegs/the-cop.jpg" alt="The Cop" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 05/15 – The Fez -->
+<a class="nft-item" href="the-fez.html">
+<div class="nft-code">05 / 15</div>
+<div class="nft-title">The Fez</div>
+<img src="nft-jpegs/the-fez.jpg" alt="The Fez" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 06/15 – Grassy Knoll -->
+<a class="nft-item" href="grassy-knoll.html">
+<div class="nft-code">06 / 15</div>
+<div class="nft-title">Grassy Knoll</div>
+<img src="nft-jpegs/grassy-knoll.jpg" alt="Grassy Knoll" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 07/15 – Rasta -->
+<a class="nft-item" href="rasta.html">
+<div class="nft-code">07 / 15</div>
+<div class="nft-title">Rasta</div>
+<img src="nft-jpegs/rasta.jpg" alt="Rasta" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 08/15 – GoldMouth -->
+<a class="nft-item" href="goldmouth.html">
+<div class="nft-code">08 / 15</div>
+<div class="nft-title">GoldMouth</div>
+<img src="nft-jpegs/goldmouth.jpg" alt="GoldMouth" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 09/15 – Cuban Link -->
+<a class="nft-item" href="cuban-link.html">
+<div class="nft-code">09 / 15</div>
+<div class="nft-title">Cuban Link</div>
+<img src="nft-jpegs/cuban-link.jpg" alt="Cuban Link" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 10/15 – The Player -->
+<a class="nft-item" href="the-player.html">
+<div class="nft-code">10 / 15</div>
+<div class="nft-title">The Player</div>
+<img src="nft-jpegs/the-player.jpg" alt="The Player" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 11/15 – The Fugitive -->
+<a class="nft-item" href="the-fugitive.html">
+<div class="nft-code">11 / 15</div>
+<div class="nft-title">The Fugitive</div>
+<img src="nft-jpegs/the-fugitive.jpg" alt="The Fugitive" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 12/15 – Underwater -->
+<a class="nft-item" href="underwater.html">
+<div class="nft-code">12 / 15</div>
+<div class="nft-title">Underwater</div>
+<img src="nft-jpegs/underwater.jpg" alt="Underwater" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 13/15 – The Artist -->
+<a class="nft-item" href="the-artist.html">
+<div class="nft-code">13 / 15</div>
+<div class="nft-title">The Artist</div>
+<img src="nft-jpegs/the-artist.jpg" alt="The Artist" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 14/15 – Galactic -->
+<a class="nft-item" href="galactic.html">
+<div class="nft-code">14 / 15</div>
+<div class="nft-title">Galactic</div>
+<img src="nft-jpegs/galactic.jpg" alt="Galactic" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+
+<!-- 15/15 – Divine -->
+<a class="nft-item" href="divine.html">
+<div class="nft-code">15 / 15</div>
+<div class="nft-title">Divine</div>
+<img src="nft-jpegs/divine.jpg" alt="Divine" class="nft-image" />
+<div class="nft-meta">
+<span>1 of 15</span>
+</div>
+</a>
+</section>
+
+<footer>
+Drop 1 – The One in Us
+<div class="brand">DIVINE TOUCH</div>
+</footer>
+</main>
+</body>
+</html>
