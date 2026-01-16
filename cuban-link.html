@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>The Fugitive – The One in Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+:root {
+--bg: #000000;
+--fg: #ffffff;
+--muted: #aaaaaa;
+--accent: #ffffff;
+--font-main: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+background: var(--bg);
+color: var(--fg);
+font-family: var(--font-main);
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 3rem 1.5rem 4rem;
+}
+
+.wrapper {
+max-width: 900px;
+width: 100%;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+.back-link {
+position: fixed;
+top: 1.5rem;
+left: 1.5rem;
+font-size: 0.8rem;
+color: var(--muted);
+opacity: 0.8;
+z-index: 10;
+}
+
+.back-link span {
+opacity: 0.7;
+}
+
+header {
+text-align: left;
+margin-bottom: 2.5rem;
+}
+
+header h1 {
+font-size: 0.9rem;
+letter-spacing: 0.26em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 0.75rem;
+}
+
+header h2 {
+font-size: 2rem;
+margin-bottom: 0.5rem;
+}
+
+header .code {
+font-size: 0.8rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--muted);
+}
+
+.nft-hero {
+display: flex;
+flex-direction: column;
+gap: 1.75rem;
+margin-bottom: 2.5rem;
+}
+
+.nft-image-wrapper {
+flex: 1;
+}
+
+.nft-image {
+width: 100%;
+border-radius: 0.75rem;
+border: 1px solid rgba(255, 255, 255, 0.25);
+display: block;
+}
+
+.nft-meta {
+flex: 1;
+font-size: 0.9rem;
+color: var(--muted);
+line-height: 1.5;
+}
+
+.nft-meta-row {
+display: flex;
+justify-content: flex-start;
+gap: 1.25rem;
+margin-bottom: 0.75rem;
+font-size: 0.85rem;
+text-transform: uppercase;
+letter-spacing: 0.16em;
+}
+
+.nft-meta-row span.label {
+color: var(--muted);
+}
+
+.nft-meta-row span.value {
+color: var(--fg);
+}
+
+.price-row {
+margin: 1.25rem 0 0.75rem;
+font-size: 0.95rem;
+}
+
+.price-row span.value {
+font-size: 1.2rem;
+}
+
+.buy-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.7rem 1.6rem;
+border-radius: 999px;
+border: 1px solid var(--accent);
+background: transparent;
+color: var(--fg);
+font-family: var(--font-main);
+font-size: 0.85rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+cursor: pointer;
+margin-top: 0.5rem;
+transition: background 0.15s ease, color 0.15s ease,
+box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.buy-button:hover {
+background: var(--accent);
+color: #000000;
+box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
+transform: translateY(-1px);
+}
+
+.buy-button small {
+margin-left: 0.5rem;
+font-size: 0.7rem;
+opacity: 0.7;
+letter-spacing: 0.16em;
+}
+
+.section {
+margin-bottom: 2.25rem;
+}
+
+.section h3 {
+font-size: 0.9rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 0.75rem;
+}
+
+.section p {
+font-size: 0.95rem;
+line-height: 1.6;
+color: var(--fg);
+white-space: pre-line;
+}
+
+.section ul {
+list-style: none;
+font-size: 0.9rem;
+line-height: 1.7;
+color: var(--fg);
+}
+
+.section ul li::before {
+content: "•";
+margin-right: 0.6rem;
+color: var(--muted);
+}
+
+footer {
+margin-top: 2rem;
+text-align: center;
+font-size: 0.8rem;
+color: var(--muted);
+opacity: 0.7;
+}
+
+footer .brand {
+margin-top: 0.3rem;
+letter-spacing: 0.3em;
+text-transform: uppercase;
+font-size: 0.7rem;
+}
+
+@media (min-width: 800px) {
+.nft-hero {
+flex-direction: row;
+align-items: flex-start;
+}
+}
+
+@media (max-width: 600px) {
+body {
+padding-top: 3.5rem;
+}
+.back-link {
+top: 1rem;
+left: 1rem;
+}
+header h2 {
+font-size: 1.6rem;
+}
+}
+</style>
+</head>
+<body>
+<!-- back to Drop 1 grid -->
+<a href="../drop1.html" class="back-link">
+<span>←</span> Drop 1
+</a>
+
+<main class="wrapper">
+<header>
+<h1>09 / 15</h1>
+<h2>Cuban Link</h2>
+<div class="code">The One in Us . . .</div>
+</header>
+
+<section class="nft-hero">
+<div class="nft-image-wrapper">
+<!-- note the ../ because this file lives in nft-htmls/ -->
+<img
+src="../nft-jpegs/cuban-link.jpg"
+alt="Cuban Link NFT"
+class="nft-image"
+/>
+</div>
+
+<div class="nft-meta">
+<div class="nft-meta-row">
+<span class="label">Edition</span>
+<span class="value">1 of 1</span>
+</div>
+<div class="nft-meta-row">
+<span class="label">Chain</span>
+<span class="value">Ethereum</span>
+</div>
+<div class="price-row">
+<span class="label">Price</span>
+<!-- change this value whenever you decide final pricing -->
+<span class="value"> &nbsp;TBA ETH</span>
+</div>
+
+<!-- placeholder button: wiring to MetaMask / contract comes later -->
+<button class="buy-button" onclick="alert('On-chain mint coming soon.')">
+ Mint Now
+<small>via MetaMask</small>
+</button>
+</div>
+</section>
+
+<section class="section">
+<h3>Story</h3>
+<p>
+Cuban Link is the one in us that achieves what we dream of.
+
+Through arduous work and discipline, material goals become achievable.
+
+Put in the work, reap the rewards.
+</p>
+</section>
+
+<section class="section">
+<h3>Utility</h3>
+<ul>
+<li>1/1 'Cuban Link' Tradeable NFT Asset</li>
+<li>1/1 'Cuban Link' JPG</li>
+<li>'The One in Us . . .' Song</li>
+<li>'The One in Us . . .' Instrumental Version</li>
+<li>1/1 Hand Signed Physical Print of 'Cuban Link' JPG</li>
+<li>1/1 500 Word 'Cuban Link' Physical Lore Page</li>
+<li>Access to Mailing list (email), for early updates + whitelist rights.</li>
+<!-- tweak / expand these bullets however you want -->
+</ul>
+</section>
+
+<footer>
+Cuban Link – Drop 1: The One in Us
+<div class="brand">DIVINE TOUCH</div>
+</footer>
+</main>
+</body>
+
+</html>
