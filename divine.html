@@ -361,11 +361,12 @@ color: var(--muted);
 opacity: 0.8;
 }
 </style>
-<!-- Ethers.js for talking to your contract -->
-<script src="https://cdn.jsdelivr.net/npm/ethers@5/dist/ethers.min.js"></script>
 
-<!-- Your site logic (modal + mint) -->
-<script src="app.js" defer></script>
+<!-- ethers.js from CDN – must be BEFORE app.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+
+<!-- your site logic -->
+<script src="../js/app.js" defer></script>
 </head>
 <body>
 <!-- back to Drop 1 grid -->
@@ -523,5 +524,6 @@ Save Account
 </body>
 
 </html>
+
 
 
