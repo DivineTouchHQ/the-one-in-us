@@ -1,118 +1,91 @@
-// Divine Touch front-end – account + mint button logic
+// ../js/app.js
 
 document.addEventListener("DOMContentLoaded", () => {
-const mintButtons = document.querySelectorAll(".buy-button");
+// Grab elements
+const mintButton = document.getElementById("dt-mint-button");
 const modal = document.getElementById("dt-account-modal");
+const closeButton = document.getElementById("dt-account-close");
 const form = document.getElementById("dt-account-form");
-const closeBtn = document.getElementById("dt-account-close");
 
-// If the modal or form doesn't exist on this page, bail out quietly
-if (!modal || !form || !mintButtons.length) {
-console.warn("DT: account modal or mint button not found on this page.");
+if (!mintButton || !modal || !closeButton || !form) {
+// If this page doesn't have those elements, bail quietly
 return;
 }
 
-// --- Wire up mint buttons ---
-mintButtons.forEach((btn) => {
-btn.addEventListener("click", (event) => {
-event.preventDefault();
-handleMintClick();
-});
-});
+const STORAGE_KEY = "dtAccount";
 
-// --- Modal close handlers ---
-closeBtn.addEventListener("click", hideModal);
-
-modal.addEventListener("click", (event) => {
-// click on dark backdrop closes modal
-if (event.target === modal) hideModal();
-});
-
-// --- Form submit handler ---
-form.addEventListener("submit", onAccountSubmit);
-
-// ----------------- CORE LOGIC -----------------
-
-function handleMintClick() {
-const existingUser = loadUser();
-
-if (existingUser) {
-console.log("DT: existing user found", existingUser);
-alert(
-`Account found for ${existingUser.email}.\n\n` +
-"Next step (coming next): open your wallet and mint on-chain."
-);
-// Later: startWalletFlow(existingUser);
-} else {
-showModal();
-}
+function openModal() {
+modal.classList.add("dt-open");
 }
 
-function onAccountSubmit(event) {
-event.preventDefault();
+function closeModal() {
+modal.classList.remove("dt-open");
+}
+
+// Prefill from localStorage if it exists
+try {
+const stored = localStorage.getItem(STORAGE_KEY);
+if (stored) {
+const data = JSON.parse(stored);
+if (data.fullName) form.elements.fullName.value = data.fullName;
+if (data.email) form.elements.email.value = data.email;
+if (data.address) form.elements.address.value = data.address;
+if (data.city) form.elements.city.value = data.city;
+if (data.country) form.elements.country.value = data.country;
+if (data.postal) form.elements.postal.value = data.postal;
+}
+} catch (e) {
+console.warn("Could not read stored DT account", e);
+}
+
+// Open modal when Mint is clicked
+mintButton.addEventListener("click", (e) => {
+e.preventDefault();
+openModal();
+});
+
+// Close button
+closeButton.addEventListener("click", (e) => {
+e.preventDefault();
+closeModal();
+});
+
+// Close on ESC key
+document.addEventListener("keydown", (e) => {
+if (e.key === "Escape") {
+closeModal();
+}
+});
+
+// Optional: click outside panel closes modal
+modal.addEventListener("click", (e) => {
+if (e.target === modal) {
+closeModal();
+}
+});
+
+// Handle form submit – save account locally
+form.addEventListener("submit", (e) => {
+e.preventDefault();
 
 const data = {
-fullName: form.elements["fullName"].value.trim(),
-email: form.elements["email"].value.trim(),
-address: form.elements["address"].value.trim(),
-city: form.elements["city"].value.trim(),
-country: form.elements["country"].value.trim(),
-postal: form.elements["postal"].value.trim(),
-createdAt: new Date().toISOString(),
+fullName: form.elements.fullName.value.trim(),
+email: form.elements.email.value.trim(),
+address: form.elements.address.value.trim(),
+city: form.elements.city.value.trim(),
+country: form.elements.country.value.trim(),
+postal: form.elements.postal.value.trim(),
 };
 
-// simple required fields
-if (!data.email || !data.address || !data.country) {
-alert("Email, country, and mailing address are required.");
-return;
-}
-
 try {
-saveUser(data);
-hideModal();
-
-alert(
-"Account saved in this browser.\n\n" +
-"Next step (our next dev pass): connect wallet + run the mint."
-);
-
-console.log("DT: user saved", data);
+localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 } catch (err) {
-console.error("DT: error saving DT user", err);
-alert(
-"Could not save your account in this browser. " +
-"Try again or use a different browser."
-);
-}
+console.warn("Could not save DT account", err);
 }
 
-// ----------------- STORAGE HELPERS -----------------
+// ✅ This is where wallet connect / contract call will later plug in
+alert("Account saved. Wallet connect + on-chain mint is the next step.");
 
-const STORAGE_KEY = "dt_user_v1";
-
-function loadUser() {
-try {
-const raw = localStorage.getItem(STORAGE_KEY);
-return raw ? JSON.parse(raw) : null;
-} catch (err) {
-console.error("DT: failed to read user from storage", err);
-return null;
-}
-}
-
-function saveUser(user) {
-localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
-}
-
-// ----------------- MODAL HELPERS -----------------
-
-function showModal() {
-modal.classList.add("dt-open");
-document.body.style.overflow = "hidden";
-}
-
-function hideModal() {
-modal.classList.remove("dt-open");
-document.body.style.overflow = "";
-}
+closeModal();
+});
 });
