@@ -1,5 +1,15 @@
-console.log("DT app.js loaded")
-// ../js/app.js
+// app.js
+console.log("DT app.js loaded");
+
+// --- Divine Touch on-chain config ---
+// ⬇️ REPLACE THIS with your real deployed contract address
+const DT_CONTRACT_ADDRESS = "0x65b4Ce250693A9F5FD6B1CEa31A2c4660f8914C9";
+
+// Minimal ABI: only what we actually call/read
+const DT_CONTRACT_ABI = [
+"function prices(uint256) view returns (uint256)",
+"function mint(uint256 tokenId) payable",
+];
 
 document.addEventListener("DOMContentLoaded", () => {
 // Grab elements
@@ -8,8 +18,8 @@ const modal = document.getElementById("dt-account-modal");
 const closeButton = document.getElementById("dt-account-close");
 const form = document.getElementById("dt-account-form");
 
+// If this page doesn't have the modal/mint (e.g. some other page), bail
 if (!mintButton || !modal || !closeButton || !form) {
-// If this page doesn't have those elements, bail quietly
 return;
 }
 
@@ -65,8 +75,55 @@ closeModal();
 }
 });
 
-// Handle form submit – save account locally
-form.addEventListener("submit", (e) => {
+// --- On-chain mint helper ---
+async function performMintFromBrowser() {
+if (typeof window.ethereum === "undefined") {
+throw new Error("No wallet detected. Please install MetaMask or a compatible wallet.");
+}
+
+const tokenIdAttr = mintButton.dataset.tokenId;
+const tokenId = parseInt(tokenIdAttr, 10);
+
+if (!tokenId || Number.isNaN(tokenId)) {
+throw new Error("Missing token id on this page.");
+}
+
+// Connect to wallet
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+// Ask user to connect accounts
+await provider.send("eth_requestAccounts", []);
+
+// Enforce Ethereum mainnet (chainId = 1)
+const network = await provider.getNetwork();
+if (network.chainId !== 1) {
+throw new Error("Please switch your wallet to Ethereum Mainnet.");
+}
+
+const signer = provider.getSigner();
+const contract = new ethers.Contract(
+DT_CONTRACT_ADDRESS,
+DT_CONTRACT_ABI,
+signer
+);
+
+// Ask contract for price (always source of truth)
+const price = await contract.prices(tokenId);
+if (price.lte(0)) {
+throw new Error("Price not set for this token.");
+}
+
+// Send mint transaction
+const tx = await contract.mint(tokenId, { value: price });
+console.log("Mint tx sent:", tx.hash);
+
+// Wait for confirmation
+const receipt = await tx.wait();
+console.log("Mint confirmed:", receipt.transactionHash);
+}
+
+// Handle form submit – save account locally, then mint on-chain
+form.addEventListener("submit", async (e) => {
 e.preventDefault();
 
 const data = {
@@ -84,10 +141,17 @@ localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 console.warn("Could not save DT account", err);
 }
 
-// ✅ This is where wallet connect / contract call will later plug in
-alert("Account saved. Wallet connect + on-chain mint is the next step.");
-
+try {
+await performMintFromBrowser();
+alert("Mint successful. Welcome to Divine Touch.");
 closeModal();
+} catch (err) {
+console.error(err);
+const msg = err && err.message ? err.message : String(err);
+alert("Mint failed or cancelled:\n" + msg);
+// Leave modal open so they can retry if they want
+}
 });
 });
+
 
