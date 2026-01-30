@@ -361,6 +361,10 @@ color: var(--muted);
 opacity: 0.8;
 }
 </style>
+<!-- Ethers.js for talking to your contract -->
+<script src="https://cdn.jsdelivr.net/npm/ethers@5/dist/ethers.min.js"></script>
+
+<!-- Your site logic (modal + mint) -->
 <script src="app.js" defer></script>
 </head>
 <body>
@@ -402,8 +406,11 @@ class="nft-image"
 </div>
 
 <!-- placeholder button: wiring to MetaMask / contract comes later -->
-<button class="buy-button" id="dt-mint-button">
- Mint Now
+<button
+class="buy-button"
+id="dt-mint-button"
+data-token-id="1">
+Mint Now
 <small>Connect Wallet</small>
 </button>
 </div>
@@ -517,3 +524,4 @@ Save Account
 
 
 </html>
+
