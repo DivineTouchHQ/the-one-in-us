@@ -314,6 +314,82 @@ Divine – Drop 1: The One in Us
 <div class="brand">DIVINE TOUCH</div>
 </footer>
 </main>
+ <!-- Shared Divine Touch account modal -->
+<div id="dt-account-modal" class="dt-account-modal">
+<div class="dt-account-panel">
+<button
+type="button"
+id="dt-account-close"
+class="dt-account-close"
+aria-label="Close"
+>
+✕
+</button>
+
+<h3 class="dt-account-title">Create your Divine Touch account</h3>
+<p class="dt-account-sub">
+Used for shipping physical items + sending early updates.
+</p>
+
+<form id="dt-account-form" class="dt-account-form">
+<label>
+Full name
+<input type="text" name="fullName" autocomplete="name" />
+</label>
+
+<label>
+Email
+<input
+type="email"
+name="email"
+autocomplete="email"
+required
+/>
+</label>
+
+<label>
+Mailing address
+<textarea
+name="address"
+rows="2"
+autocomplete="street-address"
+required
+></textarea>
+</label>
+
+<div class="dt-account-row">
+<label>
+City
+<input type="text" name="city" autocomplete="address-level2" />
+</label>
+
+<label>
+Country
+<input
+type="text"
+name="country"
+autocomplete="country-name"
+required
+/>
+</label>
+</div>
+
+<label>
+Postal / ZIP
+<input type="text" name="postal" autocomplete="postal-code" />
+</label>
+
+<button type="submit" class="dt-account-submit">
+Save Account
+</button>
+</form>
+
+<p class="dt-account-footnote">
+Your details are stored locally in this browser for now.
+</p>
+</div>
+</div>
 </body>
 
 </html>
+
