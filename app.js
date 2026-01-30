@@ -1,3 +1,4 @@
+console.log("DT app.js loaded")
 // ../js/app.js
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -89,3 +90,4 @@ alert("Account saved. Wallet connect + on-chain mint is the next step.");
 closeModal();
 });
 });
+
