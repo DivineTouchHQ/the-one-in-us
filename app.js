@@ -2,7 +2,8 @@
 console.log("DT app.js loaded");
 
 // --- Divine Touch on-chain config ---
-// ⬇️ REPLACE THIS with your real deployed contract address
+
+// Your deployed ERC1155 contract on Ethereum mainnet
 const DT_CONTRACT_ADDRESS = "0x65b4Ce250693A9F5FD6B1CEa31A2c4660f8914C9";
 
 // Minimal ABI: only what we actually call/read
@@ -10,6 +11,9 @@ const DT_CONTRACT_ABI = [
 "function prices(uint256) view returns (uint256)",
 "function mint(uint256 tokenId) payable",
 ];
+
+// Where to send buyer info (Formspree endpoint)
+const DT_FORM_ENDPOINT = "https://formspree.io/f/xvzrlnzo"; // ⬅️ replace with your real Formspree URL
 
 document.addEventListener("DOMContentLoaded", () => {
 // Grab elements
@@ -38,12 +42,24 @@ try {
 const stored = localStorage.getItem(STORAGE_KEY);
 if (stored) {
 const data = JSON.parse(stored);
-if (data.fullName) form.elements.fullName.value = data.fullName;
-if (data.email) form.elements.email.value = data.email;
-if (data.address) form.elements.address.value = data.address;
-if (data.city) form.elements.city.value = data.city;
-if (data.country) form.elements.country.value = data.country;
-if (data.postal) form.elements.postal.value = data.postal;
+if (data.fullName && form.elements.fullName) {
+form.elements.fullName.value = data.fullName;
+}
+if (data.email && form.elements.email) {
+form.elements.email.value = data.email;
+}
+if (data.address && form.elements.address) {
+form.elements.address.value = data.address;
+}
+if (data.city && form.elements.city) {
+form.elements.city.value = data.city;
+}
+if (data.country && form.elements.country) {
+form.elements.country.value = data.country;
+}
+if (data.postal && form.elements.postal) {
+form.elements.postal.value = data.postal;
+}
 }
 } catch (e) {
 console.warn("Could not read stored DT account", e);
@@ -122,7 +138,7 @@ const receipt = await tx.wait();
 console.log("Mint confirmed:", receipt.transactionHash);
 }
 
-// Handle form submit – save account locally, then mint on-chain
+// Handle form submit – save account locally, send to Formspree, then mint on-chain
 form.addEventListener("submit", async (e) => {
 e.preventDefault();
 
@@ -135,12 +151,45 @@ country: form.elements.country.value.trim(),
 postal: form.elements.postal.value.trim(),
 };
 
+// Grab tokenId from the mint button on this page
+const tokenIdAttr = mintButton.dataset.tokenId;
+const tokenId = parseInt(tokenIdAttr, 10);
+
+// 1) Save locally (for user convenience)
 try {
 localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 } catch (err) {
 console.warn("Could not save DT account", err);
 }
 
+// 2) Send to Formspree so YOU have the data
+if (DT_FORM_ENDPOINT && DT_FORM_ENDPOINT.startsWith("http")) {
+try {
+await fetch(DT_FORM_ENDPOINT, {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+"Accept": "application/json",
+},
+body: JSON.stringify({
+tokenId: tokenId,
+fullName: data.fullName,
+email: data.email,
+address: data.address,
+city: data.city,
+country: data.country,
+postal: data.postal,
+}),
+});
+} catch (err) {
+console.warn("Could not send account to Formspree", err);
+// don't block mint on a one-off email failure
+}
+} else {
+console.warn("DT_FORM_ENDPOINT not set or invalid; skipping Formspree send.");
+}
+
+// 3) Run on-chain mint
 try {
 await performMintFromBrowser();
 alert("Mint successful. Welcome to Divine Touch.");
@@ -149,9 +198,10 @@ closeModal();
 console.error(err);
 const msg = err && err.message ? err.message : String(err);
 alert("Mint failed or cancelled:\n" + msg);
-// Leave modal open so they can retry if they want
+// Leave modal open so they can retry
 }
 });
 });
+
 
 
