@@ -1,0 +1,31 @@
+{
+"name": "The Original– The One in Us",
+"description": "The Original is the one in us that knows who we are.\n\nIn knowing who we are, we can choose to connect with people that are for our highest self.\n\nBe original, connect with those who are a good for you.",
+"image": "ipfs://bafybeie4icbavbgrj5rxaqpaqwha3bnvxrzueqwh75vnl7yrwaagw7avx4/the-original.jpg",
+"external_url": "https://divinetouch.pw/nft-htmls/the-original.html",
+
+"animation_url": "ipfs://bafybeihlxxpfwcce7h4oiv6ujabyu64v72hlg5uhs2erdurtqt3kc6uixu/The One in Us.wav",
+
+"properties": {
+"audio_main": {
+"name": "The One in Us",
+"uri": "ipfs://bafybeihlxxpfwcce7h4oiv6ujabyu64v72hlg5uhs2erdurtqt3kc6uixu/The One in Us.wav"
+},
+"audio_instrumental": {
+"name": "The One in Us (Instrumental Mix)",
+"uri": "ipfs://bafybeifwe47me5suulnqjh26ae3sihlcyqlwn3axo5dckjqzg3mp7227yi/The One in Us - Instrumental Mix'.wav"
+},
+"lyrics": {
+"name": "The One in Us - Official Digital Lyric Sheet",
+"uri": "ipfs://bbafkreigpp6yaiw2zpg52zwwd4zcckubtvprj2vx3y3nngl3pf7a4jt3xji/The One in Us - Official Digital Lyric Sheet.pdf",
+"mime_type": "application/pdf"
+}
+
+"attributes": [
+{ "trait_type": "Drop", "value": "The One in Us" },
+{ "trait_type": "Edition", "value": "1 of 1" },
+{ "trait_type": "Archetype", "value": "The Original" },
+{ "trait_type": "Price Band","value": "0.12 ETH" },
+{ "trait_type": "Token ID", "value": 1 }
+]
+}

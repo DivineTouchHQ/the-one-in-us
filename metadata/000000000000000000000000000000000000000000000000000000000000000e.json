@@ -1,0 +1,32 @@
+{
+"name": "Galactic – The One in Us",
+"description": "Galactic is the one in us that loves transcendantly.\n\nIn loving galactically, we form bonds that last beyond lifetimes.\n\nGalactic is for the ones we've known, that have crossed to the other side. Never forget them, bring them with you.",
+"image": "ipfs://bafybeie4icbavbgrj5rxaqpaqwha3bnvxrzueqwh75vnl7yrwaagw7avx4/galactic.jpg",
+"external_url": "https://divinetouch.pw/nft-htmls/galactic.html",
+
+"animation_url": "ipfs://bafybeihabar6jio5hnum2oytqg55yvxklrxfkc2xuwqmv4cygwn3y7qneq/Galactic.wav",
+
+"properties": {
+"audio_main": {
+"name": "Galactic",
+"uri": "ipfs://bafybeihabar6jio5hnum2oytqg55yvxklrxfkc2xuwqmv4cygwn3y7qneq/Galactic.wav"
+},
+"audio_instrumental": {
+"name": "Galactic (Instrumental Mix)",
+"uri": "ipfs://bafybeibowim66nns4ujas5se7ufuar36obsyifx3okgszcuqshcvsmu2sq/Galactic - Instrumental Mix.wav"
+},
+"lyrics": {
+"name": "Galactic - Official Digital Lyric Sheet",
+"uri": "ipfs://bbafkreibcmtlpipvndl7ezbvhzfar4tdnymwr5bdr6f6ddaxel57sl2sbay/Galactic - Official Digital Lyric Sheet.pdf",
+"mime_type": "application/pdf"
+}
+},
+
+"attributes": [
+{ "trait_type": "Drop", "value": "The One in Us" },
+{ "trait_type": "Edition", "value": "1 of 1" },
+{ "trait_type": "Archetype", "value": "Galactic" },
+{ "trait_type": "Price Band","value": "0.55 ETH" },
+{ "trait_type": "Token ID", "value": 14 }
+]
+}

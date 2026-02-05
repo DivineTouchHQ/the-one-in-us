@@ -1,0 +1,34 @@
+{
+"name": "Underwater – The One in Us",
+"description": "Underwater is the one in us that trusts the current, receiving its nonlinear
+physical and spiritual blessings in due time..\n\nIn understanding each blessing takes a different shape, we enhance our ability
+to reap its fruits.\n\nContinue swimming, for you just may find what you search for.",
+"image": "ipfs://bafybeie4icbavbgrj5rxaqpaqwha3bnvxrzueqwh75vnl7yrwaagw7avx4/underwater.jpg",
+"external_url": "https://divinetouch.pw/nft-htmls/divine.html",
+
+"animation_url": "ipfs://bafybeifhkodgzwac4x4kp22vvswn6x3mpcqqp75qljj4237w3m3gafnpie/WaterWorld.wav",
+
+"properties": {
+"audio_main": {
+"name": "WaterWorld",
+"uri": "ipfs://bafybeifhkodgzwac4x4kp22vvswn6x3mpcqqp75qljj4237w3m3gafnpie/WaterWorld.wav"
+},
+"audio_instrumental": {
+"name": "WaterWorld (Instrumental Mix)",
+"uri": "ipfs://bafybeiglgh74xgm7wsyicoemlg5dnkblgw7fyjluvix42nifeyimynobmu/WaterWorld - Instrumental Mix.wav"
+},
+"lyrics": {
+"name": "WaterWorld - Official Digital Lyric Sheet",
+"uri": "ipfs://bafkreihb3ohjgttqatlvdsriltmpsmfte355mwhlh6qsjizf5ohcbpz4ue/WaterWorld - Official Digital Lyric Sheet.pdf",
+"mime_type": "application/pdf"
+}
+},
+
+"attributes": [
+{ "trait_type": "Drop", "value": "The One in Us" },
+{ "trait_type": "Edition", "value": "1 of 1" },
+{ "trait_type": "Archetype", "value": "Underwater" },
+{ "trait_type": "Price Band","value": "0.41 ETH" },
+{ "trait_type": "Token ID", "value": 12 }
+]
+}

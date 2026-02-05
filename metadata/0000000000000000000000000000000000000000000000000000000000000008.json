@@ -1,0 +1,32 @@
+{
+"name": "GoldMouth – The One in Us",
+"description": "GoldMouth is the one in us that flexes unapolagetically.\n\nThrough choosing to shine through fear, we unlock unshakeable inner confidence.\n\nFlexing is not always easy. Doing it cultivates an inner well of strength.",
+"image": "ipfs://bafybeie4icbavbgrj5rxaqpaqwha3bnvxrzueqwh75vnl7yrwaagw7avx4/goldmouth.jpg",
+"external_url": "https://divinetouch.pw/nft-htmls/goldmouth.html",
+
+"animation_url": "ipfs://bafybeihlxxpfwcce7h4oiv6ujabyu64v72hlg5uhs2erdurtqt3kc6uixu/The One in Us.wav",
+
+"properties": {
+"audio_main": {
+"name": "The One in Us",
+"uri": "ipfs://bafybeihlxxpfwcce7h4oiv6ujabyu64v72hlg5uhs2erdurtqt3kc6uixu/The One in Us.wav"
+},
+"audio_instrumental": {
+"name": "The One in Us (Instrumental Mix)",
+"uri": "ipfs://bafybeifwe47me5suulnqjh26ae3sihlcyqlwn3axo5dckjqzg3mp7227yi/The One in Us - Instrumental Mix'.wav"
+},
+"lyrics": {
+"name": "The One in Us - Official Digital Lyric Sheet",
+"uri": "ipfs://bbafkreigpp6yaiw2zpg52zwwd4zcckubtvprj2vx3y3nngl3pf7a4jt3xji/The One in Us - Official Digital Lyric Sheet.pdf",
+"mime_type": "application/pdf"
+}
+},
+
+"attributes": [
+{ "trait_type": "Drop", "value": "The One in Us" },
+{ "trait_type": "Edition", "value": "1 of 1" },
+{ "trait_type": "Archetype", "value": "GoldMouth" },
+{ "trait_type": "Price Band","value": "0.19 ETH" },
+{ "trait_type": "Token ID", "value": 8 }
+]
+}

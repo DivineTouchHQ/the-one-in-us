@@ -1,0 +1,32 @@
+{
+"name": "The Artist – The One in Us",
+"description": "The Artist is the one in us that is art itself.\n\nThrough acknowledging that everything is art, we acknowledge the intrinsic ties of life.\n\nBecause we are creation, we are art. Embrace it in all forms.",
+"image": "ipfs://bafybeie4icbavbgrj5rxaqpaqwha3bnvxrzueqwh75vnl7yrwaagw7avx4/the-artist.jpg",
+"external_url": "https://divinetouch.pw/nft-htmls/divine.html",
+
+"animation_url": "ipfs://bafybeihpnakyvoa22zf4a2k3ogorswpzx5zxzk5bnolzn5ut5sbsbxc2qm/The Artist.wav",
+
+"properties": {
+"audio_main": {
+"name": "The Artist",
+"uri": "ipfs://bafybeihpnakyvoa22zf4a2k3ogorswpzx5zxzk5bnolzn5ut5sbsbxc2qm/The Artist.wav"
+},
+"audio_instrumental": {
+"name": "The Artist (Instrumental Mix)",
+"uri": "ipfs://bafybeib6qkdi6vomcmp7tdkrp4ckvkua3qzz5xx5ufyi7k3mtdcvdcgski/The Artist - Instrumental Mix.wav"
+},
+"lyrics": {
+"name": "The Artist - Official Digital Lyric Sheet",
+"uri": "ipfs://bafkreib2lhraqfxzgdhnher5h5mjzop7rmqspfe4w6yfvqmbj7epngepsa/The Artist - Official Digital Lyric Sheet.pdf",
+"mime_type": "application/pdf"
+}
+},
+
+"attributes": [
+{ "trait_type": "Drop", "value": "The One in Us" },
+{ "trait_type": "Edition", "value": "1 of 1" },
+{ "trait_type": "Archetype", "value": "The Artist" },
+{ "trait_type": "Price Band","value": "0.41 ETH" },
+{ "trait_type": "Token ID", "value": 13 }
+]
+}

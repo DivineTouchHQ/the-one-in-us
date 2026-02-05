@@ -1,0 +1,32 @@
+{
+"name": "Divine – The One in Us",
+"description": "Divine is the one in us that is a God.\n\nIn remembering our Godhood, we remember that all things are possible, through us.\n\nWe are God, we are Divine.",
+"image": "ipfs://bafybeie4icbavbgrj5rxaqpaqwha3bnvxrzueqwh75vnl7yrwaagw7avx4/divine.jpg",
+"external_url": "https://divinetouch.pw/nft-htmls/divine.html",
+
+"animation_url": "ipfs://bafybeihlfkvtlzbtv2hehq4dobgd7t4jr5bu4qec3x2yjdjjloiypuwthm/Divine Touch .wav",
+
+"properties": {
+"audio_main": {
+"name": "Divine Touch",
+"uri": "ipfs://bafybeihlfkvtlzbtv2hehq4dobgd7t4jr5bu4qec3x2yjdjjloiypuwthm/Divine Touch .wav"
+},
+"audio_instrumental": {
+"name": "Divine Touch (Instrumental Mix)",
+"uri": "ipfs://bafybeiahhoziyran6l477jnc3rfh52chjxvupu5e7lhikqvoiw3ygb32wy/Divine Touch - Instrumental Mix.wav"
+},
+"lyrics": {
+"name": "Divine Touch - Official Digital Lyric Sheet",
+"uri": "ipfs://bafkreifnrgr7ldxa6ty7q2sqcepgtajt7oku3efznqpw2vclkj3we7y6wy/Divine Touch - Official Digital Lyric Sheet.pdf",
+"mime_type": "application/pdf"
+}
+},
+
+"attributes": [
+{ "trait_type": "Drop", "value": "The One in Us" },
+{ "trait_type": "Edition", "value": "1 of 1" },
+{ "trait_type": "Archetype", "value": "Divine" },
+{ "trait_type": "Price Band", "value": "0.55 ETH" },
+{ "trait_type": "Token ID", "value": 15 }
+]
+}

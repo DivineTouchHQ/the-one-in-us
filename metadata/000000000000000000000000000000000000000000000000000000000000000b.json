@@ -1,0 +1,33 @@
+{
+"name": "The Fugitive – The One in Us",
+"description": "The Fugitive is the one in us that embraces uniqueness as a gift, despite its appearance as a curse.\n\nIn understanding that we are all strange in our own ways,
+we gain the ability to better understand and connect with others.\n\nWe are all fugitives. Embrace your true nature.",
+"image": "ipfs://bafybeie4icbavbgrj5rxaqpaqwha3bnvxrzueqwh75vnl7yrwaagw7avx4/the-fugitive.jpg",
+"external_url": "https://divinetouch.pw/nft-htmls/the-fugitive.html",
+
+"animation_url": "ipfs://bafybeidkelsibwzgpent6y3easmc4cfasagxlvvv676lvwqct3yefyku5a/Fugitive.wav",
+
+"properties": {
+"audio_main": {
+"name": "Fugitive",
+"uri": "ipfs://bafybeidkelsibwzgpent6y3easmc4cfasagxlvvv676lvwqct3yefyku5a/Fugitive.wav"
+},
+"audio_instrumental": {
+"name": "Fugitive (Instrumental Mix)",
+"uri": "ipfs://bafybeia36x3l3lpk77kmuizpx37tnqtod24aul5mje6pr3pg4f2dxcazpy/Fugitive - Instrumental Mix.wav"
+},
+"lyrics": {
+"name": "Fugitive - Official Digital Lyric Sheet",
+"uri": "ipfs://bafkreif4jzvkil55rw57kk3vvkxpamarkgarthwlf4yaxmq2flmug4wus4/Fugitive - Official Digital Lyric Sheet.pdf",
+"mime_type": "application/pdf"
+}
+},
+
+"attributes": [
+{ "trait_type": "Drop", "value": "The One in Us" },
+{ "trait_type": "Edition", "value": "1 of 1" },
+{ "trait_type": "Archetype", "value": "The Fugitive" },
+{ "trait_type": "Price Band","value": "0.41 ETH" },
+{ "trait_type": "Token ID", "value": 11 }
+]
+}

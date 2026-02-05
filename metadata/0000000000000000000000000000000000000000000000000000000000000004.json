@@ -1,0 +1,32 @@
+{
+"name": "The Cop – The One in Us",
+"description": "The Cop is the one in us that stands for our values.\n\nThe bravery of standing for what we believe in builds a spine, that helps us navigate life's difficulties.\n\nStand behind your values, build your spine.",
+"image": "ipfs://bafybeie4icbavbgrj5rxaqpaqwha3bnvxrzueqwh75vnl7yrwaagw7avx4/the-cop.jpg",
+"external_url": "https://divinetouch.pw/nft-htmls/the-cop.html",
+
+"animation_url": "ipfs://bafybeihlxxpfwcce7h4oiv6ujabyu64v72hlg5uhs2erdurtqt3kc6uixu/The One in Us.wav",
+
+"properties": {
+"audio_main": {
+"name": "The One in Us",
+"uri": "ipfs://bafybeihlxxpfwcce7h4oiv6ujabyu64v72hlg5uhs2erdurtqt3kc6uixu/The One in Us.wav"
+},
+"audio_instrumental": {
+"name": "The One in Us (Instrumental Mix)",
+"uri": "ipfs://bafybeifwe47me5suulnqjh26ae3sihlcyqlwn3axo5dckjqzg3mp7227yi/The One in Us - Instrumental Mix'.wav"
+},
+"lyrics": {
+"name": "The One in Us - Official Digital Lyric Sheet",
+"uri": "ipfs://bbafkreigpp6yaiw2zpg52zwwd4zcckubtvprj2vx3y3nngl3pf7a4jt3xji/The One in Us - Official Digital Lyric Sheet.pdf",
+"mime_type": "application/pdf"
+}
+},
+
+"attributes": [
+{ "trait_type": "Drop", "value": "The One in Us" },
+{ "trait_type": "Edition", "value": "1 of 1" },
+{ "trait_type": "Archetype", "value": "The Cop" },
+{ "trait_type": "Price Band","value": "0.04 ETH" },
+{ "trait_type": "Token ID", "value": 4 }
+]
+}
