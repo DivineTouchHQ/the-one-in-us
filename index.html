@@ -7,55 +7,46 @@
 
 <style>
 :root {
---bg: #00ff66; /* Neon green */
---red: #ff3b3b; /* Red text */
---blue: #1fb7ff; /* Blue text */
---desc: #111111; /* Dark subtle description text */
+--bg: #00ff66; /* neon green */
+--red: #ff3b3b; /* red text */
+--blue: #1fb7ff; /* blue text */
+--desc: #111; /* subtle grey-black */
 --font-main: "Inter", "SF Mono", Menlo, monospace;
 }
 
-/* GLOBAL RESET */
+/* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* PAGE BACKGROUND + LAYOUT */
+/* PAGE */
 body {
 background: var(--bg);
 font-family: var(--font-main);
-color: black;
 height: 100vh;
 display: flex;
 flex-direction: column;
-justify-content: flex-start;
 align-items: center;
-padding-top: 8vh;
-animation: fadeIn 1.4s ease forwards;
+animation: fadeIn 1.2s ease forwards;
 }
 
 /* FADE IN */
 @keyframes fadeIn {
-from { opacity: 0; transform: translateY(12px); }
+from { opacity: 0; transform: translateY(14px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
+/* MAIN WRAPPER */
 .portal {
-text-align: center;
 width: 100%;
+text-align: center;
+padding-top: 14vh; /* pushes first title to upper center */
 }
 
-/* HEADER GLYPH LINE */
-.header-line {
-font-size: 0.85rem;
-opacity: 0.55;
-margin-bottom: 3rem;
-letter-spacing: 0.18em;
-}
-
-/* LINKS */
+/* TITLES */
 .title {
-font-size: 1.8rem;
+font-size: 1.85rem;
 font-weight: 700;
 text-decoration: none;
-transition: 0.2s;
+transition: 0.25s ease;
 display: inline-block;
 }
 
@@ -64,28 +55,42 @@ opacity: 0.7;
 transform: scale(1.04);
 }
 
-/* INDIVIDUAL COLORS */
 .red { color: var(--red); }
 .blue { color: var(--blue); }
 
 /* DESCRIPTIONS */
 .description {
-font-size: 0.9rem;
-margin-top: 0.6rem;
-margin-bottom: 4.8rem;
+font-size: 0.95rem;
+margin-top: 0.55rem;
 letter-spacing: 0.06em;
 color: var(--desc);
 opacity: 0.85;
 }
 
+/* SPACING BLOCKS */
+.spacer-large {
+height: 10vh; /* gap before Pussymancer */
+}
+
+.spacer-medium {
+height: 6vh; /* gap before gateway */
+}
+
+/* GATEWAY LINE */
+.gateway {
+font-size: 0.95rem;
+letter-spacing: 0.18em;
+opacity: 0.55;
+}
+
 /* FOOTER */
 .footer {
 position: fixed;
-bottom: 18px;
+bottom: 20px;
 width: 100%;
 text-align: center;
-font-size: 0.75rem;
 opacity: 0.6;
+font-size: 0.75rem;
 letter-spacing: 0.18em;
 }
 </style>
@@ -95,18 +100,20 @@ letter-spacing: 0.18em;
 
 <div class="portal">
 
-<div class="header-line">— DIVINE TOUCH GATEWAY —</div>
-
-<!-- TITLE 1 -->
+<!-- TOP TITLE -->
 <a href="drop1.html" class="title red">THE ONE IN US . . .</a>
-<div class="description">15 Luxury Musical Artifacts exploring the human collective</div>
+<div class="description">1/15 Exclusive NFT Collection</div>
 
-<!-- MASSIVE SPACING BEFORE PUSSYMANCER -->
-<div style="height: 12vh;"></div>
+<div class="spacer-large"></div>
 
-<!-- TITLE 2 -->
+<!-- PUSSYMANCER BELOW -->
 <a href="pussymancer.html" class="title blue">PUSSYMANCER</a>
 <div class="description">1/1 Exclusive NFT</div>
+
+<div class="spacer-medium"></div>
+
+<!-- GATEWAY AT LOWER SECTION -->
+<div class="gateway">— DIVINE TOUCH GATEWAY —</div>
 
 </div>
 
