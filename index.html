@@ -7,54 +7,50 @@
 
 <style>
 :root {
---bg: #00ff66; /* neon green */
---red: #ff3b3b; /* red text */
---blue: #1fb7ff; /* blue text */
---desc: #111; /* subtle description */
+--bg: #00ff66;
+--red: #ff3b3b;
+--blue: #1fb7ff;
+--desc: #111;
 --font-main: "Inter", "SF Mono", Menlo, monospace;
 }
 
 /* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* PAGE */
+/* PAGE LAYOUT */
 body {
 background: var(--bg);
 font-family: var(--font-main);
 height: 100vh;
 display: flex;
 flex-direction: column;
+justify-content: center; /* CENTER OF SCREEN */
 align-items: center;
 animation: fadeIn 1.2s ease forwards;
+text-align: center;
 }
 
-/* FADE IN */
+/* FADE */
 @keyframes fadeIn {
 from { opacity: 0; transform: translateY(14px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
-/* WRAPPER */
-.portal {
-width: 100%;
-text-align: center;
-padding-top: 14vh; /* where Gateway is positioned */
-}
-
-/* GATEWAY IN MIDDLE */
+/* GATEWAY — CENTER OF PAGE */
 .gateway {
 font-size: 0.95rem;
 letter-spacing: 0.18em;
 opacity: 0.55;
-margin-bottom: 8vh; /* pushes links BELOW it */
+margin-bottom: 6vh; /* space before “The One in Us” */
 }
 
-/* LINK TITLES */
+/* TITLES */
 .title {
 font-size: 1.85rem;
 font-weight: 700;
 text-decoration: none;
 transition: 0.25s ease;
+margin-top: 2vh;
 display: inline-block;
 }
 
@@ -70,20 +66,19 @@ transform: scale(1.04);
 .description {
 font-size: 0.95rem;
 margin-top: 0.5rem;
-margin-bottom: 5vh;
-letter-spacing: 0.06em;
+margin-bottom: 4vh;
 color: var(--desc);
 opacity: 0.85;
+letter-spacing: 0.06em;
 }
 
 /* FOOTER */
 .footer {
 position: fixed;
-bottom: 20px;
+bottom: 18px;
 width: 100%;
-text-align: center;
-opacity: 0.6;
 font-size: 0.75rem;
+opacity: 0.6;
 letter-spacing: 0.18em;
 }
 </style>
@@ -91,20 +86,17 @@ letter-spacing: 0.18em;
 
 <body>
 
-<div class="portal">
-
-<!-- GATEWAY IN THE MIDDLE -->
+<!-- GATEWAY EXACT CENTER -->
 <div class="gateway">— DIVINE TOUCH GATEWAY —</div>
 
-<!-- LINKS NOW BELOW GATEWAY -->
+<!-- BELOW CENTER: LINKS -->
 <a href="drop1.html" class="title red">THE ONE IN US . . .</a>
 <div class="description">1/15 Exclusive NFT Collection</div>
 
 <a href="pussymancer.html" class="title blue">PUSSYMANCER</a>
 <div class="description">1/1 Exclusive NFT</div>
 
-</div>
-
+<!-- FOOTER -->
 <div class="footer">
 DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
 </div>
