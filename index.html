@@ -2,73 +2,91 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Divine Touch</title>
+<title>DIVINE TOUCH</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+/* ===== THE AESTHETIC ===== */
 :root {
 --bg: #000000;
---accent: #ff0033; /* 🔥 CHANGE THIS TO BLUE OR GREEN IF YOU WANT */
+--accent: #ff3b3b; /* change to #1fb7ff (blue) or #39ff14 (neon green) */
 --text: #ffffff;
---font-main: "SF Mono", Menlo, Consolas, monospace;
+--font-main: "Inter", "SF Mono", Menlo, monospace;
 }
 
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* BACKGROUND */
 body {
-background-color: var(--bg);
+background: var(--bg);
 color: var(--text);
 font-family: var(--font-main);
 height: 100vh;
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
+animation: fadeIn 1.4s ease forwards;
 }
 
-.container {
+/* FADE IN */
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(12px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* PAGE WRAPPER */
+.portal {
 text-align: center;
-letter-spacing: 0.08em;
+letter-spacing: 0.12em;
 }
 
-a {
+/* LINKS */
+.portal a {
 display: block;
-margin: 1.4rem 0;
-font-size: 1.4rem;
-font-weight: 600;
+margin: 1.6rem 0;
+font-size: 1.35rem;
+font-weight: 500;
 color: var(--accent);
 text-decoration: none;
 transition: 0.25s ease;
 }
 
-a:hover {
-opacity: 0.7;
+.portal a:hover {
+opacity: 0.6;
+transform: scale(1.03);
 }
 
+/* FOOTER */
 .footer {
 position: fixed;
-bottom: 20px;
+bottom: 22px;
 width: 100%;
 text-align: center;
-font-size: 0.7rem;
-opacity: 0.6;
-letter-spacing: 0.15em;
+opacity: 0.5;
+font-size: 0.75rem;
+letter-spacing: 0.18em;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="portal">
+
+<!-- GLYPH / HEADER LINE -->
+<div style="font-size: 0.8rem; opacity: 0.45; margin-bottom: 3.2rem;">
+— DIVINE TOUCH GATEWAY —
+</div>
+
 <a href="drop1.html">THE ONE IN US</a>
 <a href="pussymancer.html">PUSSYMANCER</a>
+
 </div>
 
 <div class="footer">
-DIVINE TOUCH — CONTACT: DIVINETOUCH.HQ@GMAIL.COM
+DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
 </div>
 
 </body>
