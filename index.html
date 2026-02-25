@@ -8,8 +8,8 @@
 <style>
 :root {
 --bg: #000000;
---red: #ff3b3b;
---blue: #0049eb;
+--red: #ffffff; /* TITLES ARE WHITE NOW */
+--blue: #ffffff; /* TITLES ARE WHITE NOW */
 --desc: #ffffff;
 --font-main: "Inter", "SF Mono", Menlo, monospace;
 }
@@ -42,6 +42,7 @@ font-size: 0.95rem;
 letter-spacing: 0.18em;
 opacity: 0.55;
 margin-bottom: 6vh; /* space before “The One in Us” */
+color: var(--desc); /* MAKE GATEWAY WHITE TOO */
 }
 
 /* TITLES */
@@ -52,15 +53,13 @@ text-decoration: none;
 transition: 0.25s ease;
 margin-top: 2vh;
 display: inline-block;
+color: white; /* <- TITLES NOW WHITE */
 }
 
 .title:hover {
 opacity: 0.7;
 transform: scale(1.04);
 }
-
-.red { color: var(--red); }
-.blue { color: var(--blue); }
 
 /* DESCRIPTIONS */
 .description {
@@ -80,6 +79,7 @@ width: 100%;
 font-size: 0.75rem;
 opacity: 0.6;
 letter-spacing: 0.18em;
+color: white; /* <- FOOTER NOW WHITE */
 }
 </style>
 </head>
@@ -90,13 +90,10 @@ letter-spacing: 0.18em;
 <div class="gateway">— DIVINE TOUCH GATEWAY —</div>
 
 <!-- BELOW CENTER: LINKS -->
-<a href="drop1.html" class="title red">THE ONE IN US . . .</a>
+<a href="drop1.html" class="title">THE ONE IN US . . .</a>
 <div class="description">1/15 Exclusive NFT Collection</div>
 
-
-  
-
-<a href="pussymancer.html" class="title blue">PUSSYMANCER</a>
+<a href="pussymancer.html" class="title">PUSSYMANCER</a>
 <div class="description">1/1 Exclusive NFT</div>
 
 <!-- FOOTER -->
@@ -106,5 +103,3 @@ DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
 
 </body>
 </html>
-
-
