@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===== THE AESTHETIC ===== */
 :root {
---bg: #000000;
---accent: #ff3b3b; /* change to #1fb7ff (blue) or #39ff14 (neon green) */
+--bg: #00ff66; /* NEON GREEN BACKGROUND */
+--red: #ff3b3b; /* RED TEXT */
+--blue: #1fb7ff; /* BLUE TEXT */
 --text: #ffffff;
 --font-main: "Inter", "SF Mono", Menlo, monospace;
 }
@@ -17,7 +17,7 @@
 /* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* BACKGROUND */
+/* BACKGROUND + TYPESCALE */
 body {
 background: var(--bg);
 color: var(--text);
@@ -36,26 +36,36 @@ from { opacity: 0; transform: translateY(12px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
-/* PAGE WRAPPER */
 .portal {
 text-align: center;
 letter-spacing: 0.12em;
 }
 
 /* LINKS */
-.portal a {
+.link-red {
 display: block;
-margin: 1.6rem 0;
-font-size: 1.35rem;
-font-weight: 500;
-color: var(--accent);
+margin: 2rem 0; /* MORE SPACING HERE 🔥 */
+font-size: 1.6rem;
+font-weight: 600;
+color: var(--red);
 text-decoration: none;
 transition: 0.25s ease;
 }
 
-.portal a:hover {
+.link-blue {
+display: block;
+margin: 2rem 0; /* MATCHED SPACING */
+font-size: 1.6rem;
+font-weight: 600;
+color: var(--blue);
+text-decoration: none;
+transition: 0.25s ease;
+}
+
+.link-red:hover,
+.link-blue:hover {
 opacity: 0.6;
-transform: scale(1.03);
+transform: scale(1.06);
 }
 
 /* FOOTER */
@@ -64,7 +74,7 @@ position: fixed;
 bottom: 22px;
 width: 100%;
 text-align: center;
-opacity: 0.5;
+opacity: 0.6;
 font-size: 0.75rem;
 letter-spacing: 0.18em;
 }
@@ -75,13 +85,14 @@ letter-spacing: 0.18em;
 
 <div class="portal">
 
-<!-- GLYPH / HEADER LINE -->
-<div style="font-size: 0.8rem; opacity: 0.45; margin-bottom: 3.2rem;">
+<!-- HEADER LINE -->
+<div style="font-size: 0.85rem; opacity: 0.55; margin-bottom: 3.8rem; color:#000;">
 — DIVINE TOUCH GATEWAY —
 </div>
 
-<a href="drop1.html">THE ONE IN US</a>
-<a href="pussymancer.html">PUSSYMANCER</a>
+<a href="drop1.html" class="link-red">THE ONE IN US . . .</a>
+
+<a href="pussymancer.html" class="link-blue">PUSSYMANCER</a>
 
 </div>
 
