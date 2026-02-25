@@ -8,120 +8,67 @@
 <style>
 :root {
 --bg: #000000;
+--accent: #ff0033; /* 🔥 CHANGE THIS TO BLUE OR GREEN IF YOU WANT */
 --text: #ffffff;
---font-main: "SF Mono", "Menlo", "Consolas", "Courier New", monospace;
+--font-main: "SF Mono", Menlo, Consolas, monospace;
 }
 
-/* RESET */
 * {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
 
-/* PAGE */
 body {
 background-color: var(--bg);
 color: var(--text);
 font-family: var(--font-main);
 height: 100vh;
 display: flex;
-flex-direction: column;
 justify-content: center;
 align-items: center;
 }
 
-/* WRAPPER */
-.wrapper {
-flex: 1;
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+.container {
+text-align: center;
+letter-spacing: 0.08em;
 }
 
-/* LINKS */
 a {
-color: var(--text);
-text-decoration: none;
+display: block;
+margin: 1.4rem 0;
+font-size: 1.4rem;
 font-weight: 600;
+color: var(--accent);
+text-decoration: none;
+transition: 0.25s ease;
 }
 
 a:hover {
-text-decoration: underline;
-cursor: pointer;
+opacity: 0.7;
 }
 
-/* TITLE LINKS — NOW SMALLER + SPACED */
-.title {
-font-size: 1.15rem; /* smaller = more expensive */
-letter-spacing: 0.10em;
-margin: 1.2rem 0; /* perfect breathing room */
-}
-
-/* FOOTER */
 .footer {
+position: fixed;
+bottom: 20px;
 width: 100%;
 text-align: center;
-padding-bottom: 24px;
-font-weight: 700;
-font-size: 0.85rem;
-}
-
-.footer-contact {
-margin-top: 0.35rem;
-font-weight: 400;
-font-size: 0.75rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-opacity: 0.8;
-}
-
-.footer-contact a {
-color: var(--text);
-text-decoration: none;
-}
-
-.footer-contact a:hover {
-text-decoration: underline;
-}
-
-/* DESKTOP TWEAKS */
-@media (min-width: 768px) {
-.title {
-font-size: 1.3rem;
-margin: 1.4rem 0;
-}
-.footer {
-font-size: 0.95rem;
-}
-.footer-contact {
-font-size: 0.85rem;
-}
+font-size: 0.7rem;
+opacity: 0.6;
+letter-spacing: 0.15em;
 }
 </style>
-
 </head>
+
 <body>
 
-<div class="wrapper">
-
-<a href="drop1.html" class="title">
-The One in Us . . .
-</a>
-
-<a href="pussymancer.html" class="title">
-Pussymancer . . .
-</a>
-
+<div class="container">
+<a href="drop1.html">THE ONE IN US</a>
+<a href="pussymancer.html">PUSSYMANCER</a>
 </div>
 
 <div class="footer">
-Divine Touch
-<div class="footer-contact">
-CONTACT US: <a href="mailto:divinetouch.hq@gmail.com">DIVINETOUCH.HQ@GMAIL.COM</a>
-</div>
+DIVINE TOUCH — CONTACT: DIVINETOUCH.HQ@GMAIL.COM
 </div>
 
 </body>
