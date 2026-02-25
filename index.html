@@ -10,7 +10,7 @@
 --bg: #00ff66; /* neon green */
 --red: #ff3b3b; /* red text */
 --blue: #1fb7ff; /* blue text */
---desc: #111; /* subtle grey-black */
+--desc: #111; /* subtle description */
 --font-main: "Inter", "SF Mono", Menlo, monospace;
 }
 
@@ -34,14 +34,22 @@ from { opacity: 0; transform: translateY(14px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
-/* MAIN WRAPPER */
+/* WRAPPER */
 .portal {
 width: 100%;
 text-align: center;
-padding-top: 14vh; /* pushes first title to upper center */
+padding-top: 14vh; /* where Gateway is positioned */
 }
 
-/* TITLES */
+/* GATEWAY IN MIDDLE */
+.gateway {
+font-size: 0.95rem;
+letter-spacing: 0.18em;
+opacity: 0.55;
+margin-bottom: 8vh; /* pushes links BELOW it */
+}
+
+/* LINK TITLES */
 .title {
 font-size: 1.85rem;
 font-weight: 700;
@@ -61,26 +69,11 @@ transform: scale(1.04);
 /* DESCRIPTIONS */
 .description {
 font-size: 0.95rem;
-margin-top: 0.55rem;
+margin-top: 0.5rem;
+margin-bottom: 5vh;
 letter-spacing: 0.06em;
 color: var(--desc);
 opacity: 0.85;
-}
-
-/* SPACING BLOCKS */
-.spacer-large {
-height: 10vh; /* gap before Pussymancer */
-}
-
-.spacer-medium {
-height: 6vh; /* gap before gateway */
-}
-
-/* GATEWAY LINE */
-.gateway {
-font-size: 0.95rem;
-letter-spacing: 0.18em;
-opacity: 0.55;
 }
 
 /* FOOTER */
@@ -100,20 +93,15 @@ letter-spacing: 0.18em;
 
 <div class="portal">
 
-<!-- TOP TITLE -->
+<!-- GATEWAY IN THE MIDDLE -->
+<div class="gateway">— DIVINE TOUCH GATEWAY —</div>
+
+<!-- LINKS NOW BELOW GATEWAY -->
 <a href="drop1.html" class="title red">THE ONE IN US . . .</a>
 <div class="description">1/15 Exclusive NFT Collection</div>
 
-<div class="spacer-large"></div>
-
-<!-- PUSSYMANCER BELOW -->
 <a href="pussymancer.html" class="title blue">PUSSYMANCER</a>
 <div class="description">1/1 Exclusive NFT</div>
-
-<div class="spacer-medium"></div>
-
-<!-- GATEWAY AT LOWER SECTION -->
-<div class="gateway">— DIVINE TOUCH GATEWAY —</div>
 
 </div>
 
