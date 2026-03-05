@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <title>Galactic – The One in Us</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <style>
 :root {
 --bg: #000000;
@@ -40,7 +41,6 @@ a {
 color: inherit;
 text-decoration: none;
 }
-
 a:hover {
 text-decoration: underline;
 }
@@ -53,10 +53,6 @@ font-size: 0.8rem;
 color: var(--muted);
 opacity: 0.8;
 z-index: 10;
-}
-
-.back-link span {
-opacity: 0.7;
 }
 
 header {
@@ -91,15 +87,10 @@ gap: 1.75rem;
 margin-bottom: 2.5rem;
 }
 
-.nft-image-wrapper {
-flex: 1;
-}
-
 .nft-image {
 width: 100%;
 border-radius: 0.75rem;
 border: 1px solid rgba(255, 255, 255, 0.25);
-display: block;
 }
 
 .nft-meta {
@@ -111,16 +102,11 @@ line-height: 1.5;
 
 .nft-meta-row {
 display: flex;
-justify-content: flex-start;
 gap: 1.25rem;
 margin-bottom: 0.75rem;
 font-size: 0.85rem;
 text-transform: uppercase;
 letter-spacing: 0.16em;
-}
-
-.nft-meta-row span.label {
-color: var(--muted);
 }
 
 .nft-meta-row span.value {
@@ -162,13 +148,6 @@ box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
 transform: translateY(-1px);
 }
 
-.buy-button small {
-margin-left: 0.5rem;
-font-size: 0.7rem;
-opacity: 0.7;
-letter-spacing: 0.16em;
-}
-
 .section {
 margin-bottom: 2.25rem;
 }
@@ -181,18 +160,15 @@ color: var(--muted);
 margin-bottom: 0.75rem;
 }
 
-.section p {
+.section p,
+.section ul {
 font-size: 0.95rem;
-line-height: 1.6;
 color: var(--fg);
-white-space: pre-line;
+line-height: 1.6;
 }
 
 .section ul {
 list-style: none;
-font-size: 0.9rem;
-line-height: 1.7;
-color: var(--fg);
 }
 
 .section ul li::before {
@@ -215,161 +191,11 @@ letter-spacing: 0.3em;
 text-transform: uppercase;
 font-size: 0.7rem;
 }
-
-@media (min-width: 800px) {
-.nft-hero {
-flex-direction: row;
-align-items: flex-start;
-}
-}
-
-@media (max-width: 600px) {
-body {
-padding-top: 3.5rem;
-}
-.back-link {
-top: 1rem;
-left: 1rem;
-}
-header h2 {
-font-size: 1.6rem;
-}
-}
-.dt-account-modal {
-position: fixed;
-inset: 0;
-background: rgba(0, 0, 0, 0.72);
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 60;
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.15s ease;
-}
-
-.dt-account-modal.dt-open {
-opacity: 1;
-pointer-events: auto;
-}
-
-.dt-account-panel {
-background: #050505;
-border-radius: 0.9rem;
-padding: 1.8rem 1.6rem 1.4rem;
-max-width: 420px;
-width: 100%;
-border: 1px solid rgba(255, 255, 255, 0.16);
-box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
-position: relative;
-}
-
-.dt-account-title {
-font-size: 1.1rem;
-margin-bottom: 0.25rem;
-}
-
-.dt-account-sub {
-font-size: 0.85rem;
-color: var(--muted);
-margin-bottom: 1rem;
-}
-
-.dt-account-close {
-position: absolute;
-top: 0.9rem;
-right: 0.9rem;
-border: none;
-background: transparent;
-color: var(--muted);
-font-size: 0.9rem;
-cursor: pointer;
-}
-
-.dt-account-close:hover {
-color: #ffffff;
-}
-
-.dt-account-form {
-display: flex;
-flex-direction: column;
-gap: 0.75rem;
-margin-top: 0.5rem;
-}
-
-.dt-account-form label {
-display: flex;
-flex-direction: column;
-gap: 0.25rem;
-font-size: 0.8rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(--muted);
-}
-
-.dt-account-form input,
-.dt-account-form textarea {
-background: #050505;
-border-radius: 0.4rem;
-border: 1px solid rgba(255, 255, 255, 0.18);
-padding: 0.45rem 0.6rem;
-font-family: var(--font-main);
-font-size: 0.85rem;
-color: var(--fg);
-}
-
-.dt-account-form input:focus,
-.dt-account-form textarea:focus {
-outline: none;
-border-color: var(--accent);
-}
-
-.dt-account-row {
-display: flex;
-gap: 0.75rem;
-}
-
-.dt-account-row label {
-flex: 1;
-}
-
-.dt-account-submit {
-margin-top: 0.9rem;
-align-self: flex-start;
-padding: 0.6rem 1.4rem;
-border-radius: 999px;
-border: 1px solid var(--accent);
-background: #ffffff;
-color: #000000;
-font-family: var(--font-main);
-font-size: 0.8rem;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-cursor: pointer;
-}
-
-.dt-account-submit:hover {
-box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
-transform: translateY(-1px);
-}
-
-.dt-account-footnote {
-margin-top: 0.8rem;
-font-size: 0.75rem;
-color: var(--muted);
-opacity: 0.8;
-}
 </style>
 
-<!-- ethers.js from CDN – must be BEFORE app.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
-
-<!-- your site logic -->
-<script src="app.js" defer></script>
 </head>
 
 <body>
-<!-- back to Drop 1 grid -->
 <a href="../drop1.html" class="back-link">
 <span>←</span> Drop 1
 </a>
@@ -382,51 +208,47 @@ opacity: 0.8;
 </header>
 
 <section class="nft-hero">
-<div class="nft-image-wrapper">
-<!-- note the ../ because this file lives in nft-htmls/ -->
 <img
 src="../nft-jpegs/galactic.jpg"
 alt="Galactic NFT"
 class="nft-image"
 />
-</div>
 
 <div class="nft-meta">
 <div class="nft-meta-row">
 <span class="label">Edition</span>
 <span class="value">1 of 1</span>
 </div>
+
 <div class="nft-meta-row">
 <span class="label">Chain</span>
 <span class="value">Ethereum</span>
 </div>
+
 <div class="price-row">
 <span class="label">Price</span>
-<!-- change this value whenever you decide final pricing -->
 <span class="value"> &nbsp;0.55 ETH</span>
 </div>
 
-<!-- placeholder button: wiring to MetaMask / contract comes later -->
-<button
+<!-- FOUNDATION BUY LINK -->
+<a
 class="buy-button"
-id="dt-mint-button"
-data-token-id="14">
-Mint Now
-<small>Connect Wallet</small>
-</button>
+href="https://foundation.app/mint/eth/0x6fdfB0090e33454266B537714D34a60AE102f4d1/16"
+target="_blank"
+>
+View on Foundation
+</a>
 </div>
 </section>
 
 <section class="section">
 <h3>Story</h3>
 <p>
-Galactic is the one in us that loves transcendantly.  
+Galactic is the one in us that loves transcendantly.
 
 In loving galactically, we form bonds that last beyond lifetimes.
 
 Galactic is for the ones we've known, that have crossed to the other side. Never forget them, bring them with you.
-
-
 </p>
 </section>
 
@@ -440,7 +262,6 @@ Galactic is for the ones we've known, that have crossed to the other side. Never
 <li>1/1 'Galactic' Vocal + Instrumental Versions</li>
 <li>Digital and handwritten physical lyric pages</li>
 <li>Mailing list and early updates</li>
-<!-- tweak / expand these bullets however you want -->
 </ul>
 </section>
 
@@ -449,83 +270,8 @@ Galactic – Drop 1: The One in Us
 <div class="brand">DIVINE TOUCH</div>
 </footer>
 </main>
- <!-- Shared Divine Touch account modal -->
-<div id="dt-account-modal" class="dt-account-modal">
-<div class="dt-account-panel">
-<button
-type="button"
-id="dt-account-close"
-class="dt-account-close"
-aria-label="Close"
->
-✕
-</button>
 
-<h3 class="dt-account-title">Create your Divine Touch account</h3>
-<p class="dt-account-sub">
-Used for shipping physical items + sending early updates.
-</p>
-
-<form id="dt-account-form" class="dt-account-form">
-<label>
-Full name
-<input type="text" name="fullName" autocomplete="name" />
-</label>
-
-<label>
-Email
-<input
-type="email"
-name="email"
-autocomplete="email"
-required
-/>
-</label>
-
-<label>
-Mailing address
-<textarea
-name="address"
-rows="2"
-autocomplete="street-address"
-required
-></textarea>
-</label>
-
-<div class="dt-account-row">
-<label>
-City
-<input type="text" name="city" autocomplete="address-level2" />
-</label>
-
-<label>
-Country
-<input
-type="text"
-name="country"
-autocomplete="country-name"
-required
-/>
-</label>
-</div>
-
-<label>
-Postal / ZIP
-<input type="text" name="postal" autocomplete="postal-code" />
-</label>
-
-<button type="submit" class="dt-account-submit">
-Save Account
-</button>
-</form>
-
-<p class="dt-account-footnote">
-</p>
-</div>
-</div>
 </body>
-
-
 </html>
 
 
