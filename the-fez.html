@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <title>The Fez – The One in Us</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <style>
 :root {
 --bg: #000000;
@@ -14,11 +15,7 @@
 Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
 background: var(--bg);
@@ -31,19 +28,10 @@ align-items: center;
 padding: 3rem 1.5rem 4rem;
 }
 
-.wrapper {
-max-width: 900px;
-width: 100%;
-}
+.wrapper { max-width: 900px; width: 100%; }
 
-a {
-color: inherit;
-text-decoration: none;
-}
-
-a:hover {
-text-decoration: underline;
-}
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 .back-link {
 position: fixed;
@@ -52,17 +40,9 @@ left: 1.5rem;
 font-size: 0.8rem;
 color: var(--muted);
 opacity: 0.8;
-z-index: 10;
 }
 
-.back-link span {
-opacity: 0.7;
-}
-
-header {
-text-align: left;
-margin-bottom: 2.5rem;
-}
+header { text-align: left; margin-bottom: 2.5rem; }
 
 header h1 {
 font-size: 0.9rem;
@@ -72,10 +52,7 @@ color: var(--muted);
 margin-bottom: 0.75rem;
 }
 
-header h2 {
-font-size: 2rem;
-margin-bottom: 0.5rem;
-}
+header h2 { font-size: 2rem; margin-bottom: 0.5rem; }
 
 header .code {
 font-size: 0.8rem;
@@ -91,15 +68,10 @@ gap: 1.75rem;
 margin-bottom: 2.5rem;
 }
 
-.nft-image-wrapper {
-flex: 1;
-}
-
 .nft-image {
 width: 100%;
 border-radius: 0.75rem;
-border: 1px solid rgba(255, 255, 255, 0.25);
-display: block;
+border: 1px solid rgba(255,255,255,0.25);
 }
 
 .nft-meta {
@@ -111,7 +83,6 @@ line-height: 1.5;
 
 .nft-meta-row {
 display: flex;
-justify-content: flex-start;
 gap: 1.25rem;
 margin-bottom: 0.75rem;
 font-size: 0.85rem;
@@ -119,22 +90,10 @@ text-transform: uppercase;
 letter-spacing: 0.16em;
 }
 
-.nft-meta-row span.label {
-color: var(--muted);
-}
+.nft-meta-row span.value { color: var(--fg); }
 
-.nft-meta-row span.value {
-color: var(--fg);
-}
-
-.price-row {
-margin: 1.25rem 0 0.75rem;
-font-size: 0.95rem;
-}
-
-.price-row span.value {
-font-size: 1.2rem;
-}
+.price-row { margin: 1.25rem 0 0.75rem; font-size: 0.95rem; }
+.price-row span.value { font-size: 1.2rem; }
 
 .buy-button {
 display: inline-flex;
@@ -157,21 +116,12 @@ box-shadow 0.15s ease, transform 0.1s ease;
 
 .buy-button:hover {
 background: var(--accent);
-color: #000000;
-box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
+color: #000;
+box-shadow: 0 10px 26px rgba(0,0,0,0.55);
 transform: translateY(-1px);
 }
 
-.buy-button small {
-margin-left: 0.5rem;
-font-size: 0.7rem;
-opacity: 0.7;
-letter-spacing: 0.16em;
-}
-
-.section {
-margin-bottom: 2.25rem;
-}
+.section { margin-bottom: 2.25rem; }
 
 .section h3 {
 font-size: 0.9rem;
@@ -181,20 +131,14 @@ color: var(--muted);
 margin-bottom: 0.75rem;
 }
 
-.section p {
-font-size: 0.95rem;
-line-height: 1.6;
-color: var(--fg);
-white-space: pre-line;
-}
-
+.section p,
 .section ul {
-list-style: none;
-font-size: 0.9rem;
-line-height: 1.7;
+font-size: 0.95rem;
 color: var(--fg);
+line-height: 1.6;
 }
 
+.section ul { list-style: none; }
 .section ul li::before {
 content: "•";
 margin-right: 0.6rem;
@@ -222,159 +166,15 @@ flex-direction: row;
 align-items: flex-start;
 }
 }
-
-@media (max-width: 600px) {
-body {
-padding-top: 3.5rem;
-}
-.back-link {
-top: 1rem;
-left: 1rem;
-}
-header h2 {
-font-size: 1.6rem;
-}
-}
-
-.dt-account-modal {
-position: fixed;
-inset: 0;
-background: rgba(0, 0, 0, 0.72);
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 60;
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.15s ease;
-}
-
-.dt-account-modal.dt-open {
-opacity: 1;
-pointer-events: auto;
-}
-
-.dt-account-panel {
-background: #050505;
-border-radius: 0.9rem;
-padding: 1.8rem 1.6rem 1.4rem;
-max-width: 420px;
-width: 100%;
-border: 1px solid rgba(255, 255, 255, 0.16);
-box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
-position: relative;
-}
-
-.dt-account-title {
-font-size: 1.1rem;
-margin-bottom: 0.25rem;
-}
-
-.dt-account-sub {
-font-size: 0.85rem;
-color: var(--muted);
-margin-bottom: 1rem;
-}
-
-.dt-account-close {
-position: absolute;
-top: 0.9rem;
-right: 0.9rem;
-border: none;
-background: transparent;
-color: var(--muted);
-font-size: 0.9rem;
-cursor: pointer;
-}
-
-.dt-account-close:hover {
-color: #ffffff;
-}
-
-.dt-account-form {
-display: flex;
-flex-direction: column;
-gap: 0.75rem;
-margin-top: 0.5rem;
-}
-
-.dt-account-form label {
-display: flex;
-flex-direction: column;
-gap: 0.25rem;
-font-size: 0.8rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(--muted);
-}
-
-.dt-account-form input,
-.dt-account-form textarea {
-background: #050505;
-border-radius: 0.4rem;
-border: 1px solid rgba(255, 255, 255, 0.18);
-padding: 0.45rem 0.6rem;
-font-family: var(--font-main);
-font-size: 0.85rem;
-color: var(--fg);
-}
-
-.dt-account-form input:focus,
-.dt-account-form textarea:focus {
-outline: none;
-border-color: var(--accent);
-}
-
-.dt-account-row {
-display: flex;
-gap: 0.75rem;
-}
-
-.dt-account-row label {
-flex: 1;
-}
-
-.dt-account-submit {
-margin-top: 0.9rem;
-align-self: flex-start;
-padding: 0.6rem 1.4rem;
-border-radius: 999px;
-border: 1px solid var(--accent);
-background: #ffffff;
-color: #000000;
-font-family: var(--font-main);
-font-size: 0.8rem;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-cursor: pointer;
-}
-
-.dt-account-submit:hover {
-box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
-transform: translateY(-1px);
-}
-
-.dt-account-footnote {
-margin-top: 0.8rem;
-font-size: 0.75rem;
-color: var(--muted);
-opacity: 0.8;
-}
 </style>
-
-<!-- ethers.js from CDN – must be BEFORE app.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
-
-<!-- your site logic -->
-<script src="app.js" defer></script>
 </head>
+
 <body>
-<!-- back to Drop 1 grid -->
-<a href="../drop1.html" class="back-link">
-<span>←</span> Drop 1
-</a>
+
+<a href="../drop1.html" class="back-link"><span>←</span> Drop 1</a>
 
 <main class="wrapper">
+
 <header>
 <h1>05 / 15</h1>
 <h2>The Fez</h2>
@@ -382,39 +182,38 @@ opacity: 0.8;
 </header>
 
 <section class="nft-hero">
-<div class="nft-image-wrapper">
-<!-- note the ../ because this file lives in nft-htmls/ -->
+
 <img
 src="../nft-jpegs/the-fez.jpg"
 alt="The Fez NFT"
 class="nft-image"
 />
-</div>
 
 <div class="nft-meta">
 <div class="nft-meta-row">
 <span class="label">Edition</span>
 <span class="value">1 of 1</span>
 </div>
+
 <div class="nft-meta-row">
 <span class="label">Chain</span>
 <span class="value">Ethereum</span>
 </div>
+
 <div class="price-row">
 <span class="label">Price</span>
-<!-- change this value whenever you decide final pricing -->
 <span class="value"> &nbsp;0.04 ETH</span>
 </div>
 
-<!-- placeholder button: wiring to MetaMask / contract comes later -->
-<button
+<a
 class="buy-button"
-id="dt-mint-button"
-data-token-id="5">
-Mint Now
-<small>Connect Wallet</small>
-</button>
+href="https://foundation.app/mint/eth/0x6fdfB0090e33454266B537714D34a60AE102f4d1/7"
+target="_blank"
+>
+View on Foundation
+</a>
 </div>
+
 </section>
 
 <section class="section">
@@ -434,11 +233,10 @@ Push your boundaries, absorb the unfamiliar.
 <li>1/1 'The Fez' Tradeable NFT</li>
 <li>1/1 'The Fez' JPG</li>
 <li>1/1 Hand Signed Physical Print of 'The Fez'</li>
-<li>1/1 1500 Word Handwritten 'the Fez' Physical Lore Page</li>
-<li>'The One in Us . . .' Vocal + Instrumental Versions</li>
-<li>Digital and handwritten physical lyric pages</li>
-<li>Mailing list and early updates</li>
-<!-- tweak / expand these bullets however you want -->
+<li>1/1 1500 Word Handwritten 'The Fez' Lore Page</li>
+<li>'The One in Us' Vocal + Instrumental</li>
+<li>Digital + handwritten lyric pages</li>
+<li>Mailing list + early updates</li>
 </ul>
 </section>
 
@@ -446,85 +244,12 @@ Push your boundaries, absorb the unfamiliar.
 The Fez – Drop 1: The One in Us
 <div class="brand">DIVINE TOUCH</div>
 </footer>
+
 </main>
-  <!-- Shared Divine Touch account modal -->
-<div id="dt-account-modal" class="dt-account-modal">
-<div class="dt-account-panel">
-<button
-type="button"
-id="dt-account-close"
-class="dt-account-close"
-aria-label="Close"
->
-✕
-</button>
 
-<h3 class="dt-account-title">Create your Divine Touch account</h3>
-<p class="dt-account-sub">
-Used for shipping physical items + sending early updates.
-</p>
-
-<form id="dt-account-form" class="dt-account-form">
-<label>
-Full name
-<input type="text" name="fullName" autocomplete="name" />
-</label>
-
-<label>
-Email
-<input
-type="email"
-name="email"
-autocomplete="email"
-required
-/>
-</label>
-
-<label>
-Mailing address
-<textarea
-name="address"
-rows="2"
-autocomplete="street-address"
-required
-></textarea>
-</label>
-
-<div class="dt-account-row">
-<label>
-City
-<input type="text" name="city" autocomplete="address-level2" />
-</label>
-
-<label>
-Country
-<input
-type="text"
-name="country"
-autocomplete="country-name"
-required
-/>
-</label>
-</div>
-
-<label>
-Postal / ZIP
-<input type="text" name="postal" autocomplete="postal-code" />
-</label>
-
-<button type="submit" class="dt-account-submit">
-Save Account
-</button>
-</form>
-
-<p class="dt-account-footnote">
-</p>
-</div>
-</div>
 </body>
-
-
 </html>
+
 
 
 
