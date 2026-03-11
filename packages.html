@@ -12,94 +12,97 @@
 --font-main: "Inter", "SF Mono", Menlo, monospace;
 }
 
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin:0; padding:0; box-sizing:border-box; }
 
-/* PAGE LAYOUT */
 body {
 background: var(--bg);
 font-family: var(--font-main);
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 animation: fadeIn 1.2s ease forwards;
-text-align: center;
-color: white;
-padding: 4rem 1.5rem;
+text-align:center;
+color:white;
+padding:4rem 1.5rem;
 }
 
-/* FADE */
 @keyframes fadeIn {
-from { opacity: 0; transform: translateY(14px); }
-to { opacity: 1; transform: translateY(0); }
+from { opacity:0; transform:translateY(14px); }
+to { opacity:1; transform:translateY(0); }
 }
 
-/* BACK LINK */
+/* back link */
+
 .back-link {
-position: fixed;
-top: 1.5rem;
-left: 1.5rem;
-font-size: 0.8rem;
-letter-spacing: 0.14em;
-text-decoration: none;
-color: white;
-opacity: 0.6;
+position:fixed;
+top:1.5rem;
+left:1.5rem;
+font-size:0.8rem;
+letter-spacing:0.14em;
+text-decoration:none;
+color:white;
+opacity:0.6;
 }
 
 .back-link:hover {
-opacity: 1;
+opacity:1;
 }
 
-/* GATEWAY TITLE */
+/* header */
+
 .gateway {
-font-size: 0.95rem;
-letter-spacing: 0.18em;
-opacity: 0.55;
-margin-bottom: 6vh;
+font-size:0.95rem;
+letter-spacing:0.18em;
+opacity:0.55;
+margin-bottom:6vh;
 }
 
-/* TITLES */
+/* titles */
+
 .title {
-font-size: 1.85rem;
-font-weight: 700;
-text-decoration: none;
-transition: 0.25s ease;
-margin-top: 3vh;
-display: inline-block;
-color: white;
+font-size:1.85rem;
+font-weight:700;
+text-decoration:none;
+transition:0.25s ease;
+margin-top:3vh;
+display:inline-block;
+color:white;
 }
 
 .title:hover {
-opacity: 0.7;
-transform: scale(1.04);
+opacity:0.7;
+transform:scale(1.04);
 }
 
-/* IMAGES */
-.package-image {
-max-width: 360px;
-width: 100%;
-margin: 2rem auto;
-display: block;
-border-radius: 6px;
-}
+/* subtitle */
 
-/* DESCRIPTIONS */
 .description {
-font-size: 0.95rem;
-margin-top: 0.5rem;
-margin-bottom: 4vh;
-opacity: 0.85;
-letter-spacing: 0.06em;
+font-size:0.95rem;
+margin-top:0.4rem;
+margin-bottom:1.6rem;
+opacity:0.85;
+letter-spacing:0.06em;
 }
 
-/* FOOTER */
+/* images */
+
+.package-image {
+max-width:200px;
+width:100%;
+margin-bottom:4vh;
+display:block;
+border-radius:6px;
+}
+
+/* footer */
+
 .footer {
-margin-top: 5rem;
-font-size: 0.75rem;
-opacity: 0.6;
-letter-spacing: 0.18em;
+margin-top:5rem;
+font-size:0.75rem;
+opacity:0.6;
+letter-spacing:0.18em;
 }
 </style>
 </head>
@@ -111,12 +114,12 @@ letter-spacing: 0.18em;
 <div class="gateway">— Available Collector Packages —</div>
 
 <a href="drop1.html" class="title">The One in Us . . .</a>
-<img src="divine.jpg" class="package-image">
 <div class="description">1/15 Exclusive NFT Collection</div>
+<img src="divine.jpg" class="package-image">
 
 <a href="pussymancer.html" class="title">Pussymancer</a>
-<img src="pussymancer.jpg" class="package-image">
 <div class="description">1/1 Exclusive NFT</div>
+<img src="pussymancer.jpg" class="package-image">
 
 <div class="footer">
 DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
@@ -124,5 +127,6 @@ DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
 
 </body>
 </html>
+
 
 
