@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Divine Touch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+--bg: #000000;
+--text: #ffffff;
+--font-main: "Inter", "SF Mono", Menlo, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(--bg);
+font-family: var(--font-main);
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: var(--text);
+animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(14px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* GATEWAY */
+.gateway {
+font-size: 0.9rem;
+letter-spacing: 0.2em;
+opacity: 0.6;
+margin-bottom: 7vh;
+}
+
+/* LINKS */
+.portal {
+font-size: 1.9rem;
+font-weight: 700;
+text-decoration: none;
+color: white;
+margin-top: 2vh;
+transition: 0.25s ease;
+display: inline-block;
+}
+
+.portal:hover {
+opacity: 0.7;
+transform: scale(1.05);
+}
+
+/* DESCRIPTIONS */
+.description {
+font-size: 0.9rem;
+margin-top: 0.5rem;
+margin-bottom: 4.5vh;
+opacity: 0.75;
+letter-spacing: 0.08em;
+}
+
+/* FOOTER */
+.footer {
+position: fixed;
+bottom: 18px;
+width: 100%;
+font-size: 0.75rem;
+opacity: 0.6;
+letter-spacing: 0.18em;
+}
+</style>
+</head>
+
+<body>
+
+<div class="gateway">— ENTER THE DIVINE TOUCH VAULT —</div>
+
+<a href="vision.html" class="portal">The Vision</a>
+<div class="description">The vision for Divine Touch</div>
+
+<a href="vault.html" class="portal">The Vault</a>
+<div class="description">A peek into what Divine Touch has to offer</div>
+
+<a href="vortex.html" class="portal">The Vortex</a>
+<div class="description">Live artifacts ready for mint</div>
+
+<div class="footer">
+DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
+</div>
+
+</body>
+</html>
