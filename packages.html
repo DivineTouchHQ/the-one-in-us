@@ -8,8 +8,6 @@
 <style>
 :root {
 --bg: #000000;
---red: #ffffff; /* TITLES ARE WHITE NOW */
---blue: #ffffff; /* TITLES ARE WHITE NOW */
 --desc: #ffffff;
 --font-main: "Inter", "SF Mono", Menlo, monospace;
 }
@@ -21,13 +19,15 @@
 body {
 background: var(--bg);
 font-family: var(--font-main);
-height: 100vh;
+min-height: 100vh;
 display: flex;
 flex-direction: column;
-justify-content: center; /* CENTER OF SCREEN */
+justify-content: center;
 align-items: center;
 animation: fadeIn 1.2s ease forwards;
 text-align: center;
+color: white;
+padding: 4rem 1.5rem;
 }
 
 /* FADE */
@@ -36,13 +36,28 @@ from { opacity: 0; transform: translateY(14px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
-/* GATEWAY — CENTER OF PAGE */
+/* BACK LINK */
+.back-link {
+position: fixed;
+top: 1.5rem;
+left: 1.5rem;
+font-size: 0.8rem;
+letter-spacing: 0.14em;
+text-decoration: none;
+color: white;
+opacity: 0.6;
+}
+
+.back-link:hover {
+opacity: 1;
+}
+
+/* GATEWAY TITLE */
 .gateway {
 font-size: 0.95rem;
 letter-spacing: 0.18em;
 opacity: 0.55;
-margin-bottom: 6vh; /* space before “The One in Us” */
-color: var(--desc); /* MAKE GATEWAY WHITE TOO */
+margin-bottom: 6vh;
 }
 
 /* TITLES */
@@ -51,9 +66,9 @@ font-size: 1.85rem;
 font-weight: 700;
 text-decoration: none;
 transition: 0.25s ease;
-margin-top: 2vh;
+margin-top: 3vh;
 display: inline-block;
-color: white; /* <- TITLES NOW WHITE */
+color: white;
 }
 
 .title:hover {
@@ -61,42 +76,48 @@ opacity: 0.7;
 transform: scale(1.04);
 }
 
+/* IMAGES */
+.package-image {
+max-width: 360px;
+width: 100%;
+margin: 2rem auto;
+display: block;
+border-radius: 6px;
+}
+
 /* DESCRIPTIONS */
 .description {
 font-size: 0.95rem;
 margin-top: 0.5rem;
 margin-bottom: 4vh;
-color: var(--desc);
 opacity: 0.85;
 letter-spacing: 0.06em;
 }
 
 /* FOOTER */
 .footer {
-position: fixed;
-bottom: 18px;
-width: 100%;
+margin-top: 5rem;
 font-size: 0.75rem;
 opacity: 0.6;
 letter-spacing: 0.18em;
-color: white; /* <- FOOTER NOW WHITE */
 }
 </style>
 </head>
 
 <body>
 
-<!-- GATEWAY EXACT CENTER -->
+<a href="index.html" class="back-link">← Gateway</a>
+
 <div class="gateway">— Available Collector Packages —</div>
 
-<!-- BELOW CENTER: LINKS -->
 <a href="drop1.html" class="title">The One in Us . . .</a>
+<img src="divine.jpg" class="package-image">
 <div class="description">1/15 Exclusive NFT Collection</div>
 
 <a href="pussymancer.html" class="title">Pussymancer</a>
+<img src="pussymancer.jpg" class="package-image">
 <div class="description">1/1 Exclusive NFT</div>
 
-<!-- FOOTER -->
 <div class="footer">
 DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
 </div>
