@@ -59,19 +59,25 @@ opacity:0.55;
 margin-bottom:6vh;
 }
 
+/* package container */
+
+.package {
+text-decoration:none;
+color:white;
+display:block;
+margin-bottom:2vh;
+}
+
 /* titles */
 
 .title {
 font-size:1.85rem;
 font-weight:700;
-text-decoration:none;
 transition:0.25s ease;
 margin-top:3vh;
-display:inline-block;
-color:white;
 }
 
-.title:hover {
+.package:hover .title {
 opacity:0.7;
 transform:scale(1.04);
 }
@@ -94,6 +100,8 @@ width:100%;
 margin-bottom:4vh;
 display:block;
 border-radius:6px;
+margin-left:auto;
+margin-right:auto;
 }
 
 /* footer */
@@ -113,13 +121,17 @@ letter-spacing:0.18em;
 
 <div class="gateway">— Available Collector Packages —</div>
 
-<a href="1inus.html" class="title">The One in Us . . .</a>
+<a href="1inus.html" class="package">
+<div class="title">The One in Us . . .</div>
 <div class="description">1/15 Exclusive NFT Collection</div>
 <img src="divine.jpg" class="package-image">
+</a>
 
-<a href="pussymancer.html" class="title">Pussymancer</a>
+<a href="pussymancer.html" class="package">
+<div class="title">Pussymancer</div>
 <div class="description">1/1 Exclusive NFT</div>
 <img src="pussymancer.jpg" class="package-image">
+</a>
 
 <div class="footer">
 DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
@@ -127,8 +139,3 @@ DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
 
 </body>
 </html>
-
-
-
-
-
