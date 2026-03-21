@@ -40,6 +40,7 @@ letter-spacing: 0.2em;
 opacity: 0.6;
 margin-bottom: 7vh;
 text-align: center;
+line-height: 1.5;
 }
 
 h1 {
@@ -87,6 +88,7 @@ margin-bottom: 3vh;
 border: 1px solid var(--line);
 padding: 18px;
 text-align: center;
+min-width: 0;
 }
 
 .stat-label {
@@ -95,12 +97,14 @@ letter-spacing: 0.18em;
 opacity: 0.6;
 margin-bottom: 10px;
 text-transform: uppercase;
+line-height: 1.4;
 }
 
 .stat-value {
 font-size: 1.4rem;
 font-weight: 700;
 letter-spacing: 0.06em;
+word-break: break-word;
 }
 
 .controls {
@@ -120,10 +124,12 @@ font-size: 0.82rem;
 letter-spacing: 0.08em;
 padding: 12px 14px;
 outline: none;
+border-radius: 0;
 }
 
 .search {
 flex: 1 1 280px;
+min-width: 0;
 }
 
 .filter {
@@ -138,12 +144,13 @@ color: #fff;
 .table-wrap {
 border: 1px solid var(--line);
 overflow-x: auto;
+-webkit-overflow-scrolling: touch;
 }
 
 table {
 width: 100%;
 border-collapse: collapse;
-min-width: 820px;
+min-width: 760px;
 }
 
 thead th {
@@ -155,6 +162,7 @@ font-weight: 400;
 text-align: left;
 padding: 16px 14px;
 border-bottom: 1px solid var(--line);
+white-space: nowrap;
 }
 
 tbody td {
@@ -187,6 +195,7 @@ opacity: 0.68;
 
 .amount {
 font-weight: 700;
+white-space: nowrap;
 }
 
 .badge {
@@ -198,6 +207,7 @@ text-transform: uppercase;
 border: 1px solid var(--line);
 padding: 5px 8px;
 opacity: 0.8;
+line-height: 1.3;
 }
 
 .link {
@@ -216,6 +226,7 @@ padding: 20px 14px;
 font-size: 0.82rem;
 letter-spacing: 0.08em;
 display: none;
+text-align: center;
 }
 
 .footer {
@@ -227,11 +238,124 @@ text-align: center;
 font-size: 0.75rem;
 opacity: 0.6;
 letter-spacing: 0.18em;
+padding: 0 12px;
 }
 
 @media (max-width: 760px) {
+.wrap {
+padding: 40px 14px 60px;
+}
+
+.gateway {
+font-size: 0.76rem;
+letter-spacing: 0.14em;
+margin-bottom: 4.5vh;
+}
+
+.back {
+font-size: 0.72rem;
+letter-spacing: 0.14em;
+margin-bottom: 3vh;
+}
+
+h1 {
+font-size: 1.65rem;
+letter-spacing: 0.04em;
+}
+
+.sub {
+font-size: 0.78rem;
+letter-spacing: 0.05em;
+line-height: 1.6;
+margin-bottom: 3vh;
+}
+
 .summary {
 grid-template-columns: 1fr;
+gap: 10px;
+}
+
+.stat {
+padding: 14px;
+}
+
+.stat-label {
+font-size: 0.62rem;
+}
+
+.stat-value {
+font-size: 1.15rem;
+}
+
+.controls {
+flex-direction: column;
+gap: 8px;
+}
+
+.search,
+.filter {
+width: 100%;
+font-size: 0.74rem;
+padding: 11px 12px;
+}
+
+table {
+min-width: 640px;
+}
+
+thead th {
+font-size: 0.62rem;
+padding: 13px 10px;
+}
+
+tbody td {
+padding: 14px 10px;
+font-size: 0.76rem;
+}
+
+.badge {
+font-size: 0.56rem;
+padding: 4px 6px;
+}
+
+.footer {
+position: static;
+margin-top: 28px;
+padding-bottom: 10px;
+font-size: 0.66rem;
+letter-spacing: 0.12em;
+}
+}
+
+@media (max-width: 420px) {
+.wrap {
+padding: 34px 12px 44px;
+}
+
+.gateway {
+font-size: 0.68rem;
+letter-spacing: 0.11em;
+}
+
+h1 {
+font-size: 1.4rem;
+}
+
+.sub {
+font-size: 0.72rem;
+}
+
+table {
+min-width: 600px;
+}
+
+thead th {
+font-size: 0.56rem;
+letter-spacing: 0.1em;
+}
+
+tbody td {
+font-size: 0.72rem;
 }
 }
 </style>
