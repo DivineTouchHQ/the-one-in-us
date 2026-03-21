@@ -9,21 +9,28 @@
 :root {
 --bg: #000000;
 --text: #ffffff;
+--muted: rgba(255,255,255,0.62);
+--muted-2: rgba(255,255,255,0.48);
+--line: rgba(255,255,255,0.08);
 --font-main: "Inter", "SF Mono", Menlo, monospace;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
 body {
 background: var(--bg);
+color: var(--text);
 font-family: var(--font-main);
-height: 100vh;
+min-height: 100vh;
 display: flex;
-flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-color: var(--text);
+padding: 3rem 1.5rem 5rem;
 animation: fadeIn 1.2s ease forwards;
 }
 
@@ -32,75 +39,127 @@ from { opacity: 0; transform: translateY(14px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
-/* GATEWAY */
+.wrapper {
+width: 100%;
+max-width: 760px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 .gateway {
 font-size: 0.9rem;
 letter-spacing: 0.2em;
 opacity: 0.6;
-margin-bottom: 1.2vh;
+margin-bottom: 0.9rem;
 }
 
 .gateway-note {
 font-size: 0.72rem;
 letter-spacing: 0.14em;
 opacity: 0.5;
-margin-bottom: 6vh;
 font-style: italic;
+margin-bottom: 4rem;
 }
 
-/* LINKS */
+.nav {
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 2rem;
+}
+
+.item {
+padding: 0.2rem 0 1.6rem;
+border-bottom: 1px solid var(--line);
+}
+
+.item:last-child {
+border-bottom: none;
+padding-bottom: 0;
+}
+
 .portal {
 font-size: 1.9rem;
 font-weight: 700;
 text-decoration: none;
-color: white;
-margin-top: 2vh;
+color: var(--text);
 transition: 0.25s ease;
 display: inline-block;
 }
 
 .portal:hover {
 opacity: 0.7;
-transform: scale(1.05);
+transform: scale(1.04);
 }
 
-/* DESCRIPTIONS */
 .description {
 font-size: 0.9rem;
-margin-top: 0.5rem;
-margin-bottom: 4.5vh;
+margin-top: 0.55rem;
 opacity: 0.75;
 letter-spacing: 0.08em;
+color: var(--muted);
 }
 
-/* FOOTER */
 .footer {
 position: fixed;
 bottom: 18px;
+left: 0;
 width: 100%;
 font-size: 0.75rem;
 opacity: 0.6;
 letter-spacing: 0.18em;
+}
+
+@media (max-width: 600px) {
+body {
+padding: 2.5rem 1.2rem 4.5rem;
+}
+
+.gateway-note {
+margin-bottom: 3rem;
+}
+
+.portal {
+font-size: 1.55rem;
+}
+
+.description {
+font-size: 0.82rem;
+line-height: 1.5;
+}
 }
 </style>
 </head>
 
 <body>
 
+<div class="wrapper">
 <div class="gateway">— WE ARE ONE, WE ARE DIVINE —</div>
 <div class="gateway-note">all assets human made by Divine Touch</div>
 
+<div class="nav">
+<div class="item">
 <a href="vision.html" class="portal">The Vision</a>
 <div class="description">The vision for Divine Touch</div>
+</div>
 
+<div class="item">
 <a href="catalogue.html" class="portal">The Catalogue</a>
 <div class="description">A peek into what Divine Touch has to offer</div>
+</div>
 
+<div class="item">
 <a href="packages.html" class="portal">Collector Packages</a>
 <div class="description">Luxury musical artifacts ready for mint</div>
+</div>
 
+<div class="item">
 <a href="WoD.html" class="portal">Wall of Divinity</a>
 <div class="description">Collectors who entered the Divine Touch world</div>
+</div>
+</div>
+</div>
 
 <div class="footer">
 DIVINE TOUCH • CONTACT: DIVINETOUCH.HQ@GMAIL.COM
