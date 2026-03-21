@@ -1,245 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
 <title>Wall of Divinity</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 :root {
---bg: #060606;
---panel: #111111;
---panel-2: #181818;
---text: #f5f5f5;
---muted: #aaaaaa;
---line: #2b2b2b;
---accent: #d4af37;
---maxw: 1100px;
---radius: 18px;
+--bg: #000000;
+--text: #ffffff;
+--muted: rgba(255,255,255,0.6);
+--line: rgba(255,255,255,0.14);
+--font-main: "Inter", "SF Mono", Menlo, monospace;
 }
 
-* {
-box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-margin: 0;
 background: var(--bg);
 color: var(--text);
-font-family: Arial, Helvetica, sans-serif;
-line-height: 1.5;
+font-family: var(--font-main);
+animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(14px); }
+to { opacity: 1; transform: translateY(0); }
 }
 
 .wrap {
-max-width: var(--maxw);
+max-width: 1080px;
 margin: 0 auto;
-padding: 48px 20px 72px;
+padding: 60px 20px 100px;
 }
 
-.top {
-margin-bottom: 36px;
-}
-
-.eyebrow {
-color: var(--accent);
-font-size: 12px;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-margin-bottom: 14px;
+.gateway {
+font-size: 0.9rem;
+letter-spacing: 0.2em;
+opacity: 0.6;
+margin-bottom: 7vh;
+text-align: center;
 }
 
 h1 {
-margin: 0 0 12px;
-font-size: clamp(34px, 6vw, 68px);
-line-height: 0.95;
-letter-spacing: -0.03em;
+font-size: 2.2rem;
+font-weight: 700;
+letter-spacing: 0.06em;
+text-align: center;
+margin-bottom: 0.8rem;
 }
 
 .sub {
-max-width: 700px;
-color: var(--muted);
-font-size: 15px;
+text-align: center;
+font-size: 0.9rem;
+letter-spacing: 0.08em;
+opacity: 0.75;
+max-width: 760px;
+margin: 0 auto 4vh;
+line-height: 1.7;
+}
+
+.back {
+display: inline-block;
+text-decoration: none;
+color: var(--text);
+font-size: 0.82rem;
+letter-spacing: 0.18em;
+opacity: 0.7;
+margin-bottom: 4vh;
+transition: 0.25s ease;
+}
+
+.back:hover {
+opacity: 1;
+transform: scale(1.03);
 }
 
 .summary {
 display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 14px;
-margin: 28px 0 34px;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+margin-bottom: 3vh;
 }
 
 .stat {
-background: linear-gradient(180deg, var(--panel), var(--panel-2));
 border: 1px solid var(--line);
-border-radius: var(--radius);
 padding: 18px;
+text-align: center;
 }
 
 .stat-label {
-font-size: 12px;
-color: var(--muted);
+font-size: 0.7rem;
+letter-spacing: 0.18em;
+opacity: 0.6;
+margin-bottom: 10px;
 text-transform: uppercase;
-letter-spacing: 0.1em;
-margin-bottom: 8px;
 }
 
 .stat-value {
-font-size: 28px;
+font-size: 1.4rem;
 font-weight: 700;
-color: var(--accent);
+letter-spacing: 0.06em;
 }
 
 .controls {
 display: flex;
 flex-wrap: wrap;
-gap: 12px;
-margin-bottom: 22px;
+gap: 10px;
+margin-bottom: 2vh;
 }
 
 .search,
 .filter {
-background: var(--panel);
+background: transparent;
 color: var(--text);
 border: 1px solid var(--line);
-border-radius: 999px;
-padding: 12px 16px;
-font-size: 14px;
+font-family: var(--font-main);
+font-size: 0.82rem;
+letter-spacing: 0.08em;
+padding: 12px 14px;
 outline: none;
 }
 
 .search {
 flex: 1 1 280px;
-min-width: 220px;
 }
 
 .filter {
-flex: 0 0 auto;
-cursor: pointer;
+min-width: 170px;
+}
+
+.filter option {
+background: #000;
+color: #fff;
 }
 
 .table-wrap {
-background: linear-gradient(180deg, var(--panel), var(--panel-2));
 border: 1px solid var(--line);
-border-radius: 24px;
-overflow: hidden;
+overflow-x: auto;
 }
 
 table {
 width: 100%;
 border-collapse: collapse;
+min-width: 820px;
 }
 
 thead th {
-text-align: left;
-font-size: 12px;
+font-size: 0.72rem;
+letter-spacing: 0.16em;
 text-transform: uppercase;
-letter-spacing: 0.1em;
-color: var(--muted);
-background: #0c0c0c;
+opacity: 0.6;
+font-weight: 400;
+text-align: left;
+padding: 16px 14px;
 border-bottom: 1px solid var(--line);
-padding: 16px 18px;
 }
 
 tbody td {
-padding: 16px 18px;
+padding: 18px 14px;
 border-bottom: 1px solid var(--line);
+font-size: 0.86rem;
+letter-spacing: 0.03em;
 vertical-align: top;
-font-size: 15px;
-}
-
-tbody tr:hover {
-background: rgba(255, 255, 255, 0.02);
 }
 
 tbody tr:last-child td {
 border-bottom: none;
 }
 
-.collector {
-display: flex;
-flex-direction: column;
-gap: 4px;
+tbody tr:hover {
+background: rgba(255,255,255,0.02);
 }
 
 .collector-name {
 font-weight: 700;
+margin-bottom: 4px;
 }
 
-.collector-tag {
-color: var(--muted);
-font-size: 13px;
-}
-
-.piece {
-font-weight: 600;
-}
-
-.badge {
-display: inline-block;
-margin-top: 6px;
-border: 1px solid rgba(212, 175, 55, 0.35);
-color: var(--accent);
-border-radius: 999px;
-padding: 4px 10px;
-font-size: 11px;
-letter-spacing: 0.06em;
-text-transform: uppercase;
+.collector-handle,
+.note,
+.wallet-short,
+.empty {
+opacity: 0.68;
 }
 
 .amount {
 font-weight: 700;
-color: var(--accent);
-white-space: nowrap;
 }
 
-.wallet-link,
-.tx-link {
+.badge {
+display: inline-block;
+margin-top: 8px;
+font-size: 0.64rem;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+border: 1px solid var(--line);
+padding: 5px 8px;
+opacity: 0.8;
+}
+
+.link {
 color: var(--text);
 text-decoration: none;
-border-bottom: 1px solid rgba(255,255,255,0.15);
+border-bottom: 1px solid rgba(255,255,255,0.16);
+transition: 0.2s ease;
 }
 
-.wallet-link:hover,
-.tx-link:hover {
-color: var(--accent);
-border-bottom-color: var(--accent);
-}
-
-.muted {
-color: var(--muted);
-font-size: 13px;
+.link:hover {
+opacity: 0.7;
 }
 
 .empty {
-padding: 24px 18px;
-color: var(--muted);
+padding: 20px 14px;
+font-size: 0.82rem;
+letter-spacing: 0.08em;
 display: none;
 }
 
-@media (max-width: 900px) {
+.footer {
+position: fixed;
+bottom: 18px;
+left: 0;
+width: 100%;
+text-align: center;
+font-size: 0.75rem;
+opacity: 0.6;
+letter-spacing: 0.18em;
+}
+
+@media (max-width: 760px) {
 .summary {
 grid-template-columns: 1fr;
-}
-
-.table-wrap {
-overflow-x: auto;
-}
-
-table {
-min-width: 860px;
 }
 }
 </style>
 </head>
+
 <body>
+
 <div class="wrap">
-<section class="top">
-<div class="eyebrow">Divine Touch Archive</div>
+<div class="gateway">— WE ARE ONE, WE ARE DIVINE —</div>
+
+<a href="index.html" class="back">← RETURN TO DIVINE TOUCH</a>
+
 <h1>Wall of Divinity</h1>
-<p class="sub">
-A living record of the collectors who entered the Divine Touch world.
-Every name here helped bring the house into form.
-</p>
-</section>
+<div class="sub">
+Collectors who entered the Divine Touch world.<br>
+Their names, their pieces, their place in the house.
+</div>
 
 <section class="summary">
 <div class="stat">
@@ -247,12 +256,12 @@ Every name here helped bring the house into form.
 <div class="stat-value" id="collectorCount">0</div>
 </div>
 <div class="stat">
-<div class="stat-label">Pieces Collected</div>
+<div class="stat-label">Artifacts Collected</div>
 <div class="stat-value" id="pieceCount">0</div>
 </div>
 <div class="stat">
 <div class="stat-label">Total Value</div>
-<div class="stat-value" id="totalValue">0 ETH</div>
+<div class="stat-value" id="totalValue">0</div>
 </div>
 </section>
 
@@ -261,10 +270,10 @@ Every name here helped bring the house into form.
 id="searchInput"
 class="search"
 type="text"
-placeholder="Search collector, piece, wallet, note..."
+placeholder="SEARCH COLLECTOR / PIECE / WALLET / NOTE"
 />
 <select id="currencyFilter" class="filter">
-<option value="all">All currencies</option>
+<option value="all">ALL CURRENCIES</option>
 <option value="ETH">ETH</option>
 <option value="XTZ">XTZ</option>
 </select>
@@ -279,43 +288,36 @@ placeholder="Search collector, piece, wallet, note..."
 <th>Amount</th>
 <th>Wallet</th>
 <th>Date</th>
-<th>Transaction</th>
+<th>Link</th>
 </tr>
 </thead>
 <tbody id="collectorTable"></tbody>
 </table>
-<div class="empty" id="emptyState">No collectors match this search.</div>
+<div class="empty" id="emptyState">THE WALL AWAITS ITS FIRST NAMES.</div>
 </section>
+</div>
+
+<div class="footer">
+DIVINE TOUCH • WALL OF DIVINITY
 </div>
 
 <script>
 const collectors = [
-{
-name: "Boundless",
-handle: "@boundless8designs",
-piece: "Mirage",
-series: "Serenia Collector",
-amount: 50,
-currency: "XTZ",
-wallet: "tz1abcdef1234567890qwertyuiopasdfgh",
-walletUrl: "https://objkt.com/profile/tz1abcdef1234567890qwertyuiopasdfgh",
-date: "2026-03-24",
-txUrl: "https://objkt.com/asset/KT1-example-1",
-note: "Calm entry artifact"
-},
-{
-name: "Collector Name",
-handle: "@collectorhandle",
-piece: "Pussymancer",
-series: "Vault Holder",
-amount: 1.11,
-currency: "ETH",
-wallet: "0x1234567890abcdef1234567890abcdef12345678",
-walletUrl: "https://etherscan.io/address/0x1234567890abcdef1234567890abcdef12345678",
-date: "2026-04-01",
-txUrl: "https://etherscan.io/tx/0xexample",
-note: "Collector package"
-}
+// Add collectors here manually when they buy
+// Example:
+// {
+// name: "Collector Name",
+// handle: "@collectorhandle",
+// piece: "Pussymancer",
+// series: "Vault Holder",
+// amount: 1.11,
+// currency: "ETH",
+// wallet: "0x1234567890abcdef1234567890abcdef12345678",
+// walletUrl: "https://etherscan.io/address/0x1234567890abcdef1234567890abcdef12345678",
+// date: "2026-03-24",
+// txUrl: "https://etherscan.io/tx/0xexample",
+// note: "Collector package"
+// }
 ];
 
 const table = document.getElementById("collectorTable");
@@ -349,13 +351,17 @@ const q = searchInput.value.trim().toLowerCase();
 const currency = currencyFilter.value;
 
 const filtered = collectors.filter((item) => {
+const handle = (item.handle || "").toLowerCase();
+const note = (item.note || "").toLowerCase();
+const series = (item.series || "").toLowerCase();
+
 const matchesSearch =
 item.name.toLowerCase().includes(q) ||
-item.handle.toLowerCase().includes(q) ||
+handle.includes(q) ||
 item.piece.toLowerCase().includes(q) ||
 item.wallet.toLowerCase().includes(q) ||
-item.note.toLowerCase().includes(q) ||
-item.series.toLowerCase().includes(q);
+note.includes(q) ||
+series.includes(q);
 
 const matchesCurrency =
 currency === "all" || item.currency === currency;
@@ -366,33 +372,32 @@ return matchesSearch && matchesCurrency;
 table.innerHTML = filtered.map((item) => `
 <tr>
 <td>
-<div class="collector">
 <div class="collector-name">${item.name}</div>
-<div class="collector-tag">${item.handle}</div>
-</div>
+${item.handle ? `<div class="collector-handle">${item.handle}</div>` : ``}
 </td>
 <td>
-<div class="piece">${item.piece}</div>
-<div class="badge">${item.series}</div>
-<div class="muted">${item.note}</div>
+<div>${item.piece}</div>
+${item.series ? `<div class="badge">${item.series}</div>` : ``}
+${item.note ? `<div class="note" style="margin-top:8px;">${item.note}</div>` : ``}
 </td>
 <td class="amount">${formatAmount(item.amount, item.currency)}</td>
 <td>
-<a class="wallet-link" href="${item.walletUrl}" target="_blank" rel="noopener noreferrer">
-${shortenWallet(item.wallet)}
-</a>
+${item.walletUrl
+? `<a class="link wallet-short" href="${item.walletUrl}" target="_blank" rel="noopener noreferrer">${shortenWallet(item.wallet)}</a>`
+: `<span class="wallet-short">${shortenWallet(item.wallet)}</span>`
+}
 </td>
 <td>${formatDate(item.date)}</td>
 <td>
-<a class="tx-link" href="${item.txUrl}" target="_blank" rel="noopener noreferrer">
-View
-</a>
+${item.txUrl
+? `<a class="link" href="${item.txUrl}" target="_blank" rel="noopener noreferrer">VIEW</a>`
+: `—`
+}
 </td>
 </tr>
 `).join("");
 
 emptyState.style.display = filtered.length ? "none" : "block";
-
 updateStats(filtered);
 }
 
@@ -421,5 +426,6 @@ currencyFilter.addEventListener("change", renderTable);
 
 renderTable();
 </script>
+
 </body>
 </html>
