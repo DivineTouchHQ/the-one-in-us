@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wall of Divinity</title>
+<style>
+:root {
+--bg: #060606;
+--panel: #111111;
+--panel-2: #181818;
+--text: #f5f5f5;
+--muted: #aaaaaa;
+--line: #2b2b2b;
+--accent: #d4af37;
+--maxw: 1100px;
+--radius: 18px;
+}
+
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+background: var(--bg);
+color: var(--text);
+font-family: Arial, Helvetica, sans-serif;
+line-height: 1.5;
+}
+
+.wrap {
+max-width: var(--maxw);
+margin: 0 auto;
+padding: 48px 20px 72px;
+}
+
+.top {
+margin-bottom: 36px;
+}
+
+.eyebrow {
+color: var(--accent);
+font-size: 12px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+
+h1 {
+margin: 0 0 12px;
+font-size: clamp(34px, 6vw, 68px);
+line-height: 0.95;
+letter-spacing: -0.03em;
+}
+
+.sub {
+max-width: 700px;
+color: var(--muted);
+font-size: 15px;
+}
+
+.summary {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 14px;
+margin: 28px 0 34px;
+}
+
+.stat {
+background: linear-gradient(180deg, var(--panel), var(--panel-2));
+border: 1px solid var(--line);
+border-radius: var(--radius);
+padding: 18px;
+}
+
+.stat-label {
+font-size: 12px;
+color: var(--muted);
+text-transform: uppercase;
+letter-spacing: 0.1em;
+margin-bottom: 8px;
+}
+
+.stat-value {
+font-size: 28px;
+font-weight: 700;
+color: var(--accent);
+}
+
+.controls {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+margin-bottom: 22px;
+}
+
+.search,
+.filter {
+background: var(--panel);
+color: var(--text);
+border: 1px solid var(--line);
+border-radius: 999px;
+padding: 12px 16px;
+font-size: 14px;
+outline: none;
+}
+
+.search {
+flex: 1 1 280px;
+min-width: 220px;
+}
+
+.filter {
+flex: 0 0 auto;
+cursor: pointer;
+}
+
+.table-wrap {
+background: linear-gradient(180deg, var(--panel), var(--panel-2));
+border: 1px solid var(--line);
+border-radius: 24px;
+overflow: hidden;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+thead th {
+text-align: left;
+font-size: 12px;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: var(--muted);
+background: #0c0c0c;
+border-bottom: 1px solid var(--line);
+padding: 16px 18px;
+}
+
+tbody td {
+padding: 16px 18px;
+border-bottom: 1px solid var(--line);
+vertical-align: top;
+font-size: 15px;
+}
+
+tbody tr:hover {
+background: rgba(255, 255, 255, 0.02);
+}
+
+tbody tr:last-child td {
+border-bottom: none;
+}
+
+.collector {
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.collector-name {
+font-weight: 700;
+}
+
+.collector-tag {
+color: var(--muted);
+font-size: 13px;
+}
+
+.piece {
+font-weight: 600;
+}
+
+.badge {
+display: inline-block;
+margin-top: 6px;
+border: 1px solid rgba(212, 175, 55, 0.35);
+color: var(--accent);
+border-radius: 999px;
+padding: 4px 10px;
+font-size: 11px;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+}
+
+.amount {
+font-weight: 700;
+color: var(--accent);
+white-space: nowrap;
+}
+
+.wallet-link,
+.tx-link {
+color: var(--text);
+text-decoration: none;
+border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.wallet-link:hover,
+.tx-link:hover {
+color: var(--accent);
+border-bottom-color: var(--accent);
+}
+
+.muted {
+color: var(--muted);
+font-size: 13px;
+}
+
+.empty {
+padding: 24px 18px;
+color: var(--muted);
+display: none;
+}
+
+@media (max-width: 900px) {
+.summary {
+grid-template-columns: 1fr;
+}
+
+.table-wrap {
+overflow-x: auto;
+}
+
+table {
+min-width: 860px;
+}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="top">
+<div class="eyebrow">Divine Touch Archive</div>
+<h1>Wall of Divinity</h1>
+<p class="sub">
+A living record of the collectors who entered the Divine Touch world.
+Every name here helped bring the house into form.
+</p>
+</section>
+
+<section class="summary">
+<div class="stat">
+<div class="stat-label">Collectors</div>
+<div class="stat-value" id="collectorCount">0</div>
+</div>
+<div class="stat">
+<div class="stat-label">Pieces Collected</div>
+<div class="stat-value" id="pieceCount">0</div>
+</div>
+<div class="stat">
+<div class="stat-label">Total Value</div>
+<div class="stat-value" id="totalValue">0 ETH</div>
+</div>
+</section>
+
+<section class="controls">
+<input
+id="searchInput"
+class="search"
+type="text"
+placeholder="Search collector, piece, wallet, note..."
+/>
+<select id="currencyFilter" class="filter">
+<option value="all">All currencies</option>
+<option value="ETH">ETH</option>
+<option value="XTZ">XTZ</option>
+</select>
+</section>
+
+<section class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Collector</th>
+<th>Collected</th>
+<th>Amount</th>
+<th>Wallet</th>
+<th>Date</th>
+<th>Transaction</th>
+</tr>
+</thead>
+<tbody id="collectorTable"></tbody>
+</table>
+<div class="empty" id="emptyState">No collectors match this search.</div>
+</section>
+</div>
+
+<script>
+const collectors = [
+{
+name: "Boundless",
+handle: "@boundless8designs",
+piece: "Mirage",
+series: "Serenia Collector",
+amount: 50,
+currency: "XTZ",
+wallet: "tz1abcdef1234567890qwertyuiopasdfgh",
+walletUrl: "https://objkt.com/profile/tz1abcdef1234567890qwertyuiopasdfgh",
+date: "2026-03-24",
+txUrl: "https://objkt.com/asset/KT1-example-1",
+note: "Calm entry artifact"
+},
+{
+name: "Collector Name",
+handle: "@collectorhandle",
+piece: "Pussymancer",
+series: "Vault Holder",
+amount: 1.11,
+currency: "ETH",
+wallet: "0x1234567890abcdef1234567890abcdef12345678",
+walletUrl: "https://etherscan.io/address/0x1234567890abcdef1234567890abcdef12345678",
+date: "2026-04-01",
+txUrl: "https://etherscan.io/tx/0xexample",
+note: "Collector package"
+}
+];
+
+const table = document.getElementById("collectorTable");
+const searchInput = document.getElementById("searchInput");
+const currencyFilter = document.getElementById("currencyFilter");
+const emptyState = document.getElementById("emptyState");
+
+function shortenWallet(wallet) {
+if (!wallet) return "";
+if (wallet.startsWith("0x")) {
+return wallet.slice(0, 6) + "..." + wallet.slice(-4);
+}
+return wallet.slice(0, 8) + "..." + wallet.slice(-6);
+}
+
+function formatAmount(amount, currency) {
+return `${amount} ${currency}`;
+}
+
+function formatDate(dateString) {
+const d = new Date(dateString + "T00:00:00");
+return d.toLocaleDateString("en-CA", {
+year: "numeric",
+month: "short",
+day: "numeric"
+});
+}
+
+function renderTable() {
+const q = searchInput.value.trim().toLowerCase();
+const currency = currencyFilter.value;
+
+const filtered = collectors.filter((item) => {
+const matchesSearch =
+item.name.toLowerCase().includes(q) ||
+item.handle.toLowerCase().includes(q) ||
+item.piece.toLowerCase().includes(q) ||
+item.wallet.toLowerCase().includes(q) ||
+item.note.toLowerCase().includes(q) ||
+item.series.toLowerCase().includes(q);
+
+const matchesCurrency =
+currency === "all" || item.currency === currency;
+
+return matchesSearch && matchesCurrency;
+});
+
+table.innerHTML = filtered.map((item) => `
+<tr>
+<td>
+<div class="collector">
+<div class="collector-name">${item.name}</div>
+<div class="collector-tag">${item.handle}</div>
+</div>
+</td>
+<td>
+<div class="piece">${item.piece}</div>
+<div class="badge">${item.series}</div>
+<div class="muted">${item.note}</div>
+</td>
+<td class="amount">${formatAmount(item.amount, item.currency)}</td>
+<td>
+<a class="wallet-link" href="${item.walletUrl}" target="_blank" rel="noopener noreferrer">
+${shortenWallet(item.wallet)}
+</a>
+</td>
+<td>${formatDate(item.date)}</td>
+<td>
+<a class="tx-link" href="${item.txUrl}" target="_blank" rel="noopener noreferrer">
+View
+</a>
+</td>
+</tr>
+`).join("");
+
+emptyState.style.display = filtered.length ? "none" : "block";
+
+updateStats(filtered);
+}
+
+function updateStats(filtered) {
+document.getElementById("collectorCount").textContent = filtered.length;
+document.getElementById("pieceCount").textContent = filtered.length;
+
+const ethTotal = filtered
+.filter(x => x.currency === "ETH")
+.reduce((sum, x) => sum + Number(x.amount), 0);
+
+const xtzTotal = filtered
+.filter(x => x.currency === "XTZ")
+.reduce((sum, x) => sum + Number(x.amount), 0);
+
+let totalText = [];
+if (ethTotal) totalText.push(`${ethTotal} ETH`);
+if (xtzTotal) totalText.push(`${xtzTotal} XTZ`);
+if (!totalText.length) totalText.push("0");
+
+document.getElementById("totalValue").textContent = totalText.join(" / ");
+}
+
+searchInput.addEventListener("input", renderTable);
+currencyFilter.addEventListener("change", renderTable);
+
+renderTable();
+</script>
+</body>
+</html>
