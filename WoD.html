@@ -427,21 +427,19 @@ DIVINE TOUCH • WALL OF DIVINITY
 
 <script>
 const collectors = [
-// Add collectors here manually when they buy
-// Example:
-// {
-// name: "Collector Name",
-// handle: "@collectorhandle",
-// piece: "Pussymancer",
-// series: "Vault Holder",
-// amount: 1.11,
-// currency: "ETH",
-// wallet: "0x1234567890abcdef1234567890abcdef12345678",
-// walletUrl: "https://etherscan.io/address/0x1234567890abcdef1234567890abcdef12345678",
-// date: "2026-03-24",
-// txUrl: "https://etherscan.io/tx/0xexample",
-// note: "Collector package"
-// }
+{
+name: "Genesis Collector I",
+handle: "",
+piece: "The One in Us — 04/15 “The Cop”",
+series: "The One in Us",
+amount: 0.04,
+currency: "ETH",
+wallet: "Wallet hidden for security reasons",
+walletUrl: "",
+date: "2026-05-23",
+txUrl: "",
+note: "First Divine Touch collector package"
+}
 ];
 
 const table = document.getElementById("collectorTable");
@@ -451,6 +449,7 @@ const emptyState = document.getElementById("emptyState");
 
 function shortenWallet(wallet) {
 if (!wallet) return "";
+if (wallet.toLowerCase().includes("hidden")) return wallet;
 if (wallet.startsWith("0x")) {
 return wallet.slice(0, 6) + "..." + wallet.slice(-4);
 }
