@@ -439,6 +439,19 @@ walletUrl: "",
 date: "2026-05-23",
 txUrl: "",
 note: "First Divine Touch collector package"
+},
+{
+name: "Ernesto",
+handle: "@ernestoacsh",
+piece: "The One in Us — 03/15 “The Durag”",
+series: "The One in Us",
+amount: 0.04,
+currency: "ETH",
+wallet: "ernestoasch.eth",
+walletUrl: "",
+date: "2026-07-15",
+txUrl: "",
+note: "Divine Touch collector package"
 }
 ];
 
@@ -537,7 +550,7 @@ const xtzTotal = filtered
 .reduce((sum, x) => sum + Number(x.amount), 0);
 
 let totalText = [];
-if (ethTotal) totalText.push(`${ethTotal} ETH`);
+if (ethTotal) totalText.push(`${ethTotal.toFixed(2)} ETH`);
 if (xtzTotal) totalText.push(`${xtzTotal} XTZ`);
 if (!totalText.length) totalText.push("0");
 
