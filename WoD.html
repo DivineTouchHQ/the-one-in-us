@@ -14,7 +14,11 @@
 --font-main: "Inter", "SF Mono", Menlo, monospace;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
 body {
 background: var(--bg);
@@ -24,8 +28,15 @@ animation: fadeIn 1.2s ease forwards;
 }
 
 @keyframes fadeIn {
-from { opacity: 0; transform: translateY(14px); }
-to { opacity: 1; transform: translateY(0); }
+from {
+opacity: 0;
+transform: translateY(14px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
 }
 
 .wrap {
@@ -364,47 +375,62 @@ font-size: 0.72rem;
 <body>
 
 <div class="wrap">
-<div class="gateway">— WE ARE ONE, WE ARE DIVINE —</div>
 
-<a href="index.html" class="back">← Gateway</a>
+<div class="gateway">
+— WE ARE ONE, WE ARE DIVINE —
+</div>
+
+<a href="index.html" class="back">
+← Gateway
+</a>
 
 <h1>Wall of Divinity</h1>
+
 <div class="sub">
 Collectors who entered the Divine Touch world.<br>
 Their names, their pieces, their place in the house.
 </div>
 
 <section class="summary">
+
 <div class="stat">
 <div class="stat-label">Collectors</div>
 <div class="stat-value" id="collectorCount">0</div>
 </div>
+
 <div class="stat">
 <div class="stat-label">Artifacts Collected</div>
 <div class="stat-value" id="pieceCount">0</div>
 </div>
+
 <div class="stat">
 <div class="stat-label">Total Value</div>
 <div class="stat-value" id="totalValue">0</div>
 </div>
+
 </section>
 
 <section class="controls">
+
 <input
 id="searchInput"
 class="search"
 type="text"
 placeholder="SEARCH COLLECTOR / PIECE / WALLET / NOTE"
-/>
+>
+
 <select id="currencyFilter" class="filter">
 <option value="all">ALL CURRENCIES</option>
 <option value="ETH">ETH</option>
 <option value="XTZ">XTZ</option>
 </select>
+
 </section>
 
 <section class="table-wrap">
+
 <table>
+
 <thead>
 <tr>
 <th>Collector</th>
@@ -415,10 +441,17 @@ placeholder="SEARCH COLLECTOR / PIECE / WALLET / NOTE"
 <th>Link</th>
 </tr>
 </thead>
+
 <tbody id="collectorTable"></tbody>
+
 </table>
-<div class="empty" id="emptyState">THE WALL AWAITS ITS FIRST NAMES.</div>
+
+<div class="empty" id="emptyState">
+THE WALL AWAITS ITS FIRST NAMES.
+</div>
+
 </section>
+
 </div>
 
 <div class="footer">
@@ -452,6 +485,19 @@ walletUrl: "",
 date: "2026-07-15",
 txUrl: "",
 note: "Divine Touch collector package"
+},
+{
+name: "Peter Parker",
+handle: "@PeterParkerNFT",
+piece: "The One in Us — 10/15 “The Player”",
+series: "The One in Us",
+amount: 0.19,
+currency: "ETH",
+wallet: "0xc604fEA7934Ca0D049E21073cE8cF1441680bb33",
+walletUrl: "https://etherscan.io/address/0xc604fEA7934Ca0D049E21073cE8cF1441680bb33",
+date: "2026-07-18",
+txUrl: "",
+note: "Divine Touch collector package"
 }
 ];
 
@@ -462,10 +508,15 @@ const emptyState = document.getElementById("emptyState");
 
 function shortenWallet(wallet) {
 if (!wallet) return "";
-if (wallet.toLowerCase().includes("hidden")) return wallet;
+
+if (wallet.toLowerCase().includes("hidden")) {
+return wallet;
+}
+
 if (wallet.startsWith("0x")) {
 return wallet.slice(0, 6) + "..." + wallet.slice(-4);
 }
+
 return wallet.slice(0, 8) + "..." + wallet.slice(-6);
 }
 
@@ -475,6 +526,7 @@ return `${amount} ${currency}`;
 
 function formatDate(dateString) {
 const d = new Date(dateString + "T00:00:00");
+
 return d.toLocaleDateString("en-CA", {
 year: "numeric",
 month: "short",
@@ -507,54 +559,102 @@ return matchesSearch && matchesCurrency;
 
 table.innerHTML = filtered.map((item) => `
 <tr>
+
 <td>
 <div class="collector-name">${item.name}</div>
-${item.handle ? `<div class="collector-handle">${item.handle}</div>` : ``}
+
+${item.handle
+? `<div class="collector-handle">${item.handle}</div>`
+: ``
+}
 </td>
+
 <td>
 <div>${item.piece}</div>
-${item.series ? `<div class="badge">${item.series}</div>` : ``}
-${item.note ? `<div class="note" style="margin-top:8px;">${item.note}</div>` : ``}
+
+${item.series
+? `<div class="badge">${item.series}</div>`
+: ``
+}
+
+${item.note
+? `<div class="note" style="margin-top:8px;">${item.note}</div>`
+: ``
+}
 </td>
-<td class="amount">${formatAmount(item.amount, item.currency)}</td>
+
+<td class="amount">
+${formatAmount(item.amount, item.currency)}
+</td>
+
 <td>
 ${item.walletUrl
-? `<a class="link wallet-short" href="${item.walletUrl}" target="_blank" rel="noopener noreferrer">${shortenWallet(item.wallet)}</a>`
+? `<a
+class="link wallet-short"
+href="${item.walletUrl}"
+target="_blank"
+rel="noopener noreferrer"
+>${shortenWallet(item.wallet)}</a>`
 : `<span class="wallet-short">${shortenWallet(item.wallet)}</span>`
 }
 </td>
-<td>${formatDate(item.date)}</td>
+
+<td>
+${formatDate(item.date)}
+</td>
+
 <td>
 ${item.txUrl
-? `<a class="link" href="${item.txUrl}" target="_blank" rel="noopener noreferrer">VIEW</a>`
+? `<a
+class="link"
+href="${item.txUrl}"
+target="_blank"
+rel="noopener noreferrer"
+>VIEW</a>`
 : `—`
 }
 </td>
+
 </tr>
 `).join("");
 
-emptyState.style.display = filtered.length ? "none" : "block";
+emptyState.style.display =
+filtered.length ? "none" : "block";
+
 updateStats(filtered);
 }
 
 function updateStats(filtered) {
-document.getElementById("collectorCount").textContent = filtered.length;
-document.getElementById("pieceCount").textContent = filtered.length;
+document.getElementById("collectorCount").textContent =
+filtered.length;
+
+document.getElementById("pieceCount").textContent =
+filtered.length;
 
 const ethTotal = filtered
-.filter(x => x.currency === "ETH")
-.reduce((sum, x) => sum + Number(x.amount), 0);
+.filter((item) => item.currency === "ETH")
+.reduce((sum, item) => sum + Number(item.amount), 0);
 
 const xtzTotal = filtered
-.filter(x => x.currency === "XTZ")
-.reduce((sum, x) => sum + Number(x.amount), 0);
+.filter((item) => item.currency === "XTZ")
+.reduce((sum, item) => sum + Number(item.amount), 0);
 
-let totalText = [];
-if (ethTotal) totalText.push(`${ethTotal.toFixed(2)} ETH`);
-if (xtzTotal) totalText.push(`${xtzTotal} XTZ`);
-if (!totalText.length) totalText.push("0");
+const totalText = [];
 
-document.getElementById("totalValue").textContent = totalText.join(" / ");
+if (ethTotal) {
+totalText.push(`${ethTotal.toFixed(2)} ETH`);
+}
+
+if (xtzTotal) {
+totalText.push(`${xtzTotal} XTZ`);
+}
+
+if (!totalText.length) {
+totalText.push("0");
+}
+
+document.getElementById("totalValue").textContent =
+totalText.join(" / ");
 }
 
 searchInput.addEventListener("input", renderTable);
