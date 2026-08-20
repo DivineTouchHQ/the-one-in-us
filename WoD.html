@@ -498,6 +498,19 @@ walletUrl: "https://etherscan.io/address/0xc604fEA7934Ca0D049E21073cE8cF1441680b
 date: "2026-07-18",
 txUrl: "",
 note: "Divine Touch collector package"
+},
+{
+name: "JP Moregainz",
+handle: "@jp_moregainz",
+piece: "The One in Us — 02/15 “The Outsider”",
+series: "The One in Us",
+amount: 0.04,
+currency: "ETH",
+wallet: "0xffaf3fe15d8a00183eeb4fab74de5965ff6c099e",
+walletUrl: "https://opensea.io/0xffaf3fe15d8a00183eeb4fab74de5965ff6c099e",
+date: "2026-08-20",
+txUrl: "",
+note: "Divine Touch collector package"
 }
 ];
 
@@ -521,6 +534,10 @@ return wallet.slice(0, 8) + "..." + wallet.slice(-6);
 }
 
 function formatAmount(amount, currency) {
+if (amount === null || amount === undefined || !currency) {
+return "—";
+}
+
 return `${amount} ${currency}`;
 }
 
@@ -546,8 +563,8 @@ const series = (item.series || "").toLowerCase();
 const matchesSearch =
 item.name.toLowerCase().includes(q) ||
 handle.includes(q) ||
-item.piece.toLowerCase().includes(q) ||
-item.wallet.toLowerCase().includes(q) ||
+(item.piece || "").toLowerCase().includes(q) ||
+(item.wallet || "").toLowerCase().includes(q) ||
 note.includes(q) ||
 series.includes(q);
 
@@ -570,7 +587,7 @@ ${item.handle
 </td>
 
 <td>
-<div>${item.piece}</div>
+<div>${item.piece || "—"}</div>
 
 ${item.series
 ? `<div class="badge">${item.series}</div>`
@@ -595,7 +612,7 @@ href="${item.walletUrl}"
 target="_blank"
 rel="noopener noreferrer"
 >${shortenWallet(item.wallet)}</a>`
-: `<span class="wallet-short">${shortenWallet(item.wallet)}</span>`
+: `<span class="wallet-short">${shortenWallet(item.wallet) || "—"}</span>`
 }
 </td>
 
@@ -629,7 +646,7 @@ document.getElementById("collectorCount").textContent =
 filtered.length;
 
 document.getElementById("pieceCount").textContent =
-filtered.length;
+filtered.filter((item) => item.piece).length;
 
 const ethTotal = filtered
 .filter((item) => item.currency === "ETH")
@@ -663,5 +680,7 @@ currencyFilter.addEventListener("change", renderTable);
 renderTable();
 </script>
 
+</body>
+</html>
 </body>
 </html>
