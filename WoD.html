@@ -511,6 +511,19 @@ walletUrl: "https://opensea.io/0xffaf3fe15d8a00183eeb4fab74de5965ff6c099e",
 date: "2026-08-20",
 txUrl: "",
 note: "Divine Touch collector package"
+},
+{
+name: "Chloe",
+handle: "@Starxlight",
+piece: "The One in Us — 05/15 “The Fez”",
+series: "The One in Us",
+amount: 0.04,
+currency: "ETH",
+wallet: "metuka.eth",
+walletUrl: "https://etherscan.io/enslookup-search?search=metuka.eth",
+date: "2026-09-08",
+txUrl: "",
+note: "Divine Touch collector package"
 }
 ];
 
@@ -530,7 +543,7 @@ if (wallet.startsWith("0x")) {
 return wallet.slice(0, 6) + "..." + wallet.slice(-4);
 }
 
-return wallet.slice(0, 8) + "..." + wallet.slice(-6);
+return wallet;
 }
 
 function formatAmount(amount, currency) {
@@ -680,7 +693,5 @@ currencyFilter.addEventListener("change", renderTable);
 renderTable();
 </script>
 
-</body>
-</html>
 </body>
 </html>
